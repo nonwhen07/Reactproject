@@ -4,6 +4,6 @@
     "sass": "^1.97.2"
   },
   "scripts": {
-    "sass": "sass src/scss/main.scss public/css/style.css --watch"
+    "sass": "sass --load-path=node_modules src/scss/main.scss public/css/style.css --watch"
   }
 }
