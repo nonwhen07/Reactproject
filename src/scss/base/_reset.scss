@@ -1,0 +1,14 @@
+/* src/scss/base/_reset.scss */
+
+/* 如果你想統一 box model（Bootstrap 已有，但保險，以及補上Bootstrap缺少的部分） */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 移除圖片底下空白（展示專案常用） */
+img {
+  display: block;
+  max-width: 100%;
+}
