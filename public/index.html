@@ -10,10 +10,70 @@
 </head>
 <body>
 
-  <div class="container py-5">
-    <h1 class="text-primary">Hello Bootstrap + Sass</h1>
-    <button class="btn btn-primary">Bootstrap Button</button>
-  </div>
+  <!-- Header -->
+  <header class="border-bottom">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-3">
+
+        <!-- Logo placeholder -->
+        <div class="header-logo">
+          <div style="width:120px;height:32px;background:#E5E5E5;border-radius:4px;"></div>
+        </div>
+
+        <!-- Nav -->
+        <nav class="d-flex gap-4">
+          <a href="#" class="text-decoration-none text-dark">搜尋頁</a>
+          <a href="#" class="text-decoration-none text-dark">投稿資訊</a>
+          <a href="#" class="text-decoration-none text-dark">關於我們</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="d-flex align-items-center gap-3">
+
+          <!-- ui-select -->
+          <div class="ui-select">
+            <button type="button" class="ui-select-trigger">
+              搜尋類型
+              <span>▾</span>
+            </button>
+
+            <!-- demo: 預設先顯示，之後再接 JS -->
+            <div class="ui-select-menu">
+              <div class="ui-select-option is-selected">診所</div>
+              <div class="ui-select-option">旅館</div>
+              <div class="ui-select-option">商家</div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <button class="ui-btn ui-btn--primary">
+            登入 / 註冊
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="container py-5">
+    <div style="height:300px;background:#F0F0F0;border-radius:8px;">
+      <h1 class="text-primary">Hello Bootstrap + Sass</h1>
+      <button class="btn btn-primary">Bootstrap Button</button>
+      <button class="ui-btn ui-btn-primary">Bootstraplike ui-btn Button</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-top">
+    <div class="container py-4">
+      <div style="height:120px;background:#F0F0F0;border-radius:8px;"></div>
+    </div>
+  </footer>
+
+  
+  
 
   <!-- Bootstrap JS（npm 版） -->
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

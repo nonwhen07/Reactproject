@@ -1,6 +1,7 @@
 @use "bootstrap/scss/bootstrap" as *;
 
-@use './helpers/variables';
+// @use './helpers/variables';
+@use "./helpers/variables" as *;
 // @use './helpers/mixins';
 
 // @use './base/reset';
@@ -10,10 +11,11 @@
 // @use './layout/footer';
 
 @use './components/buttons';
-@use './components/cards';
 @use './components/select';
+@use './components/form';
+// @use './components/cards';
 
-@use './pages/index';
+// @use './pages/index';
 
 
 

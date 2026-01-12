@@ -11859,5 +11859,133 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.ui-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ui-btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.ui-btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+.ui-btn-primary {
+  background-color: #5B8DDE;
+  color: #262626;
+}
+.ui-btn-primary:hover {
+  background-color: #1F63B2;
+  color: #FFFFFF;
+}
+
+.ui-btn-secondary {
+  background-color: #FFFFFF;
+  color: #262626;
+}
+.ui-btn-secondary:hover {
+  background-color: rgb(167.1046153846, 193.1476923077, 237.0953846154);
+}
+
+.ui-btn-warning {
+  background-color: #FECB31;
+  color: #0A0A0A;
+}
+.ui-btn-warning:hover {
+  background-color: rgb(218.2, 132.1370517928, 0);
+}
+
+.ui-btn-danger {
+  background-color: #FF9C04;
+  color: #0A0A0A;
+}
+.ui-btn-danger:hover {
+  background-color: rgb(218.2, 132.1370517928, 0);
+}
+
+.ui-btn-default {
+  background-color: #A3A3A3;
+  color: #FFFFFF;
+}
+.ui-btn-default:hover {
+  background-color: rgb(61.6, 61.6, 61.6);
+}
+
+.ui-select {
+  position: relative;
+  display: inline-block;
+}
+
+.ui-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  color: #0A0A0A;
+  cursor: pointer;
+}
+.ui-select-trigger:hover, .ui-select-trigger:focus {
+  background-color: #C9D9F4;
+}
+
+.ui-select-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 10;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ui-select-option {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.ui-select-option:hover {
+  background-color: #F0F0F0;
+}
+.ui-select-option.is-selected {
+  font-weight: 600;
+}
+
+.ui-input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+}
+.ui-input:focus {
+  border-color: #5B8DDE;
+}
+
+.ui-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.ui-radio {
+  display: flex;
+  align-items: center;
+}
 
 /*# sourceMappingURL=style.css.map */

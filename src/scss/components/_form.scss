@@ -1,1 +1,24 @@
-// checkbox / radio / input 先把與_form.scss 重複的部分抽出來
+// checkbox / radio / input 先把與_form.scss能處理的部分放一起，之後如果功能擴大可以抽出來/* =========
+@use '../helpers/variables' as *;
+
+.ui-input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid $ui-border-default;
+
+  &:focus {
+    border-color: $ui-color-primary;
+  }
+}
+
+
+.ui-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+
+.ui-radio {
+  display: flex;
+  align-items: center;
+}
