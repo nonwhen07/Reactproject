@@ -22,36 +22,34 @@
 
         <!-- Nav -->
         <nav class="d-flex gap-4">
-          <a href="#" class="text-decoration-none text-dark">搜尋頁</a>
-          <a href="#" class="text-decoration-none text-dark">投稿資訊</a>
-          <a href="#" class="text-decoration-none text-dark">關於我們</a>
-        </nav>
-
-        <!-- Actions -->
-        <div class="d-flex align-items-center gap-3">
-
-          <!-- ui-select -->
           <div class="ui-select">
             <button type="button" class="ui-select-trigger">
-              搜尋類型
+              搜尋頁
               <span>▾</span>
             </button>
-
             <!-- demo: 預設先顯示，之後再接 JS -->
             <div class="ui-select-menu">
-              <div class="ui-select-option is-selected">診所</div>
-              <div class="ui-select-option">旅館</div>
-              <div class="ui-select-option">商家</div>
+              <div class="ui-select-option is-selected">找診所</div>
+              <div class="ui-select-option">找旅館</div>
+              <div class="ui-select-option">找賣家</div>
             </div>
           </div>
-
-          <!-- CTA -->
-          <button class="ui-btn ui-btn--primary">
-            登入 / 註冊
-          </button>
-
-        </div>
-
+          <a href="#" class="text-decoration-none text-dark">稀寵資訊</a>
+          <a href="#" class="text-decoration-none text-dark">投稿/回報</a>
+          
+          <div class="ui-select">
+            <button type="button" class="ui-select-trigger">
+              登入/註冊
+              <span>▾</span>
+            </button>
+            <!-- demo: 預設先顯示，之後再接 JS -->
+            <div class="ui-select-menu">
+              <div class="ui-select-option is-selected">登入會員</div>
+              <div class="ui-select-option">註冊會員</div>
+            </div>
+          </div>
+          <a href="#" class="text-decoration-none text-dark">會員中心</a>
+        </nav>
       </div>
     </div>
   </header>
@@ -62,6 +60,8 @@
       <h1 class="text-primary">Hello Bootstrap + Sass</h1>
       <button class="btn btn-primary">Bootstrap Button</button>
       <button class="ui-btn ui-btn-primary">Bootstraplike ui-btn Button</button>
+      <button class="ui-btn ui-btn-secondary ui-btn-lg">Bootstraplike ui-btn Button</button>
+      <button class="ui-btn ui-btn-warning ui-btn-sm">Bootstraplike ui-btn Button</button>
     </div>
   </main>
 
