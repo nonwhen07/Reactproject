@@ -27,12 +27,6 @@
   font-size: 0.875rem;
 }
 
-// .ui-btn {
-//   /* default size */
-//   padding: 0.5rem 1rem;
-//   font-size: 1rem;
-// }
-
 .ui-btn-lg {
   padding: 0.75rem 1.5rem;
   font-size: 1.125rem;
@@ -40,50 +34,51 @@
 
 
 
+
 .ui-btn-primary {
-  background-color: $ui-primary;
-  color: #fff;
+  background-color: $ui-color-primary;
+  color: $ui-bg-default;
 
   &:hover {
-    background-color: darken($ui-primary, 8%);
+    background-color: $ui-color-primary-hover;
+    color: $ui-bg-default;
+  }
+}
+
+.ui-btn-secondary {
+  background-color: $ui-bg-default;
+  color: $ui-neutral-800;
+
+  &:hover {
+    background-color: darken($ui-color-secondary, 8%);
+  }
+}
+
+.ui-btn-warning {
+  background-color:  $ui-color-warning;
+  color: $ui-text-primary;
+
+  &:hover {
+    background-color: darken($ui-color-danger, 8%);
+  }
+}
+
+.ui-btn-danger {
+  background-color:  $ui-color-danger;
+  color: $ui-text-primary;
+
+  &:hover {
+    background-color: darken($ui-color-danger, 8%);
   }
 }
 
 
-.ui-btn-primary500 {
-  background-color: $ui-primary-500;
-  color: #fff;
+.ui-btn-default {
+  background-color: $ui-text-muted;
+  color: $ui-bg-default;
 
   &:hover {
-    background-color: darken($ui-primary-500, 8%);
+    background-color: darken($ui-text-secondary, 8%);
   }
 }
 
-.ui-btn-primary200 {
-  background-color: $ui-primary-200;
-  color: #fff;
-
-  &:hover {
-    background-color: darken($ui-primary, 8%);
-  }
-}
-
-
-.ui-btn-primary-orange{
-  background-color: $ui-primary-yellow;
-  color: #fff;
-
-  &:hover {
-    background-color: darken($ui-primary, 8%);
-  }
-}
-
-
-.ui-btn-primary-orange {
-  background-color: $ui-primary-orange;
-  color: #fff;
-
-  &:hover {
-    background-color: darken($ui-primary, 8%);
-  }
-}
