@@ -11905,7 +11905,7 @@ textarea.form-control-lg {
   color: #0A0A0A;
 }
 .ui-btn-warning:hover {
-  background-color: rgb(204.8554216867, 120.4048192771, 3.3445783133);
+  background-color: rgb(218.2, 132.1370517928, 0);
 }
 
 .ui-select {
@@ -11947,6 +11947,136 @@ textarea.form-control-lg {
 }
 .ui-select-option.is-selected {
   font-weight: 600;
+}
+
+/* =====================================
+  Carousel Controls
+
+  設計稿使用feather-icons所以直接套用
+  npm install feather-icons
+
+  在main.js中引入
+  import feather from 'feather-icons';
+  feather.replace();
+
+  ----------------------------------
+  HTML結構範例：
+  <button class="ui-carousel__btn" aria-label="Previous">
+    <i data-feather="chevron-left"></i>
+  </button>
+
+  <button class="ui-carousel__btn" aria-label="Next">
+    <i data-feather="chevron-right"></i>
+  </button>
+===================================== */
+.ui-carousel__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* 基本箭頭按鈕 */
+.ui-carousel__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  padding: 1rem;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background-color: #FFFFFF;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.ui-carousel__btn svg,
+.ui-carousel__btn img {
+  width: 1rem;
+  height: 1rem;
+}
+.ui-carousel__btn:hover {
+  border-color: #FEC631;
+}
+.ui-carousel__btn.is-active {
+  border-color: #FEC631;
+}
+.ui-carousel__btn.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Mobile size variant */
+.ui-carousel__btn--sm {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+}
+
+/* =====================================
+  Pagination
+
+  HTML 結構：
+  <nav class="ui-pagination" aria-label="Pagination">
+    <button
+      class="ui-pagination__item ui-pagination__item--prev is-disabled"
+      aria-label="Previous page"
+      disabled
+    >
+      ‹
+    </button>
+
+    <button class="ui-pagination__item">1</button>
+
+    <button class="ui-pagination__item is-active" aria-current="page">
+      2
+    </button>
+
+    <button class="ui-pagination__item">3</button>
+
+    <button
+      class="ui-pagination__item ui-pagination__item--next"
+      aria-label="Next page"
+    >
+      ›
+    </button>
+  </nav>
+===================================== */
+.ui-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 共用項目（數字 & 箭頭） */
+.ui-pagination__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #F0F0F0;
+  color: #FEC631;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  /* hover 與 active 視覺共用 */
+}
+.ui-pagination__item:hover, .ui-pagination__item.is-active {
+  background-color: #FEC631;
+  color: #262626;
+}
+.ui-pagination__item.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* 箭頭（語意角色，外觀不另外拆） */
+.ui-pagination__item--prev,
+.ui-pagination__item--next {
+  font-size: 1rem;
 }
 
 .ui-input {
