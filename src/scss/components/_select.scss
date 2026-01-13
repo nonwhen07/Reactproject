@@ -1,48 +1,99 @@
+// @use '../helpers/variables' as *;
+
+// .ui-select {
+//   position: relative;
+//   display: inline-block;
+// }
+
+// .ui-select-trigger {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+
+//   padding: 8px 12px;
+//   border-radius: 999px;
+//   background-color: $ui-bg-default;
+//   border: 1px solid $ui-border-default;
+//   color: $ui-text-primary;
+//   cursor: pointer;
+
+//   &:hover,
+//   &:focus {
+//     background-color: $ui-color-secondary;
+//   }
+// }
+
+// .ui-select-menu {
+//   position: absolute;
+//   top: calc(100% + 4px);
+//   left: 0;
+//   z-index: 10;
+
+//   background-color: $ui-bg-default;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+// }
+
+// .ui-select-option {
+//   padding: 0.5rem 1rem;
+//   border-radius: 999px;
+//   cursor: pointer;
+
+//   &:hover ,
+//   &.is-selected {
+//     background-color: $ui-bg-subtle;
+//     font-weight: 600;
+//   }
+// }
+
+
 @use '../helpers/variables' as *;
+
+/* =========================
+  Select / Dropdown
+========================= */
 
 .ui-select {
   position: relative;
-  display: inline-block;
 }
 
-.ui-select-trigger {
+.ui-select__menu {
   display: flex;
+  flex-direction: column;
+  gap: 0.25rem; // 4px
+
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  background-color: $ui-bg-default;
+}
+
+/* option item */
+.ui-select__option {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
 
-  padding: 8px 12px;
+  padding: 0.5rem 1rem; // 8px 16px
   border-radius: 999px;
-  background-color: $ui-bg-default;
-  border: 1px solid $ui-border-default;
+
+  background-color: transparent;
   color: $ui-text-primary;
-  cursor: pointer;
 
+  border: none;
+  text-align: left;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  /* hover = selected */
   &:hover,
-  &:focus {
-    background-color: $ui-color-secondary;
-  }
-}
-
-.ui-select-menu {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  z-index: 10;
-
-  background-color: $ui-bg-default;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.ui-select-option {
-  padding: 8px 12px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $ui-bg-subtle;
-  }
-
   &.is-selected {
-    font-weight: 600;
+    background-color: $ui-blue-200;
+  }
+
+  /* keyboard focus */
+  &:focus-visible {
+    outline: 2px solid $ui-blue-500;
+    outline-offset: 2px;
   }
 }

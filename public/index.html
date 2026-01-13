@@ -50,28 +50,46 @@
           </div>
           <a href="#" class="text-decoration-none text-dark">會員中心</a>
         </nav>
+
+        <!-- <nav class="ui-nav">
+          <a class="ui-nav__item is-active">搜尋頁</a>
+          <a class="ui-nav__item">
+            <i class="icon-user"></i>
+            會員中心
+          </a>
+        </nav> -->
+
+
+
       </div>
     </div>
   </header>
 
   <!-- Content -->
   <main class="container py-5">
-    <div style="height:300px;background:#F0F0F0;border-radius:8px;">
+    <div style="height:900px;background:#F0F0F0;border-radius:8px;">
       <h1 class="text-primary">Hello Bootstrap + Sass</h1>
+      <hr />
       <button class="btn btn-primary">Bootstrap Button</button>
-      <button class="ui-btn ui-btn-primary">Bootstraplike ui-btn Button</button>
-      <button class="ui-btn ui-btn-secondary ui-btn-lg">Bootstraplike ui-btn Button</button>
-      <button class="ui-btn ui-btn-warning ui-btn-sm">Bootstraplike ui-btn Button</button>
+      <button class="ui-btn">ui-btn</button>
+      <button class="ui-btn ui-btn-primary">primary</button>
+      <button class="ui-btn ui-btn-default ui-btn-lg">default&lg</button>
+      <button class="ui-btn ui-btn-warning">warning</button>
+      <hr />  
       <div class="ui-carousel__controls">
         <button class="ui-carousel__btn" aria-label="Previous">
           <i data-feather="chevron-left"></i>
         </button>
 
-        <button class="ui-carousel__btn" aria-label="Next">
+        <button class="ui-carousel__btn is-active" aria-label="Next">
+          <i data-feather="chevron-right"></i>
+        </button>
+        <button class="ui-carousel__btn ui-carousel__btn--sm" aria-label="Next">
           <i data-feather="chevron-right"></i>
         </button>
       </div>
-
+      
+      <hr />
       <nav class="ui-pagination" aria-label="Pagination">
         <button
           class="ui-pagination__item ui-pagination__item--prev is-disabled"
@@ -97,7 +115,7 @@
         </button>
       </nav>
 
-      
+
     </div>
   </main>
 
@@ -113,5 +131,9 @@
 
   <!-- Bootstrap JS（npm 版） -->
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    feather.replace();
+  </script>
 </body>
 </html>
