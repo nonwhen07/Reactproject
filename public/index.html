@@ -9,111 +9,254 @@
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
-
   <!-- Header -->
   <header class="border-bottom">
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-between py-3">
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          <img src="/logo.png" alt="" height="32" class="me-2">
+          稀寵搜尋
+        </a>
+        <!-- 手機版漢堡 -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <!-- Logo placeholder -->
-        <div class="header-logo">
-          <div style="width:120px;height:32px;background:#E5E5E5;border-radius:4px;"></div>
+
+        <!-- 導覽列 -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                搜尋頁
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./search/clinic">找診所</a></li>
+                <li><a class="dropdown-item" href="./search/hotel">找旅館</a></li>
+                <li><a class="dropdown-item" href="./search/store">找賣家</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="/member">
+                <i class="bi bi-person-circle me-1"></i>
+                稀寵資訊
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="/member">
+                <i class="bi bi-person-circle me-1"></i>
+                投稿/回報
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                登入/註冊
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./member/login">登入會員</a></li>
+                <li><a class="dropdown-item" href="./member/reg">註冊會員</a></li>
+                <li><a class="dropdown-item" href="./member/forget">忘記密碼</a></li>
+              </ul>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="/member">
+                  <i class="bi bi-person-circle me-1"></i>
+                  會員中心
+                </a>
+              </li>
+            </li>
+          </ul>
         </div>
 
-        <!-- Nav -->
-        <nav class="d-flex gap-4">
-          <div class="ui-select">
-            <button type="button" class="ui-select-trigger">
-              搜尋頁
-              <span>▾</span>
-            </button>
-            <!-- demo: 預設先顯示，之後再接 JS -->
-            <div class="ui-select-menu">
-              <div class="ui-select-option is-selected">找診所</div>
-              <div class="ui-select-option">找旅館</div>
-              <div class="ui-select-option">找賣家</div>
-            </div>
-          </div>
-          <a href="#" class="text-decoration-none text-dark">稀寵資訊</a>
-          <a href="#" class="text-decoration-none text-dark">投稿/回報</a>
-          
-          <div class="ui-select">
-            <button type="button" class="ui-select-trigger">
-              登入/註冊
-              <span>▾</span>
-            </button>
-            <!-- demo: 預設先顯示，之後再接 JS -->
-            <div class="ui-select-menu">
-              <div class="ui-select-option is-selected">登入會員</div>
-              <div class="ui-select-option">註冊會員</div>
-            </div>
-          </div>
-          <a href="#" class="text-decoration-none text-dark">會員中心</a>
-        </nav>
-
-        <!-- <nav class="ui-nav">
-          <a class="ui-nav__item is-active">搜尋頁</a>
-          <a class="ui-nav__item">
-            <i class="icon-user"></i>
-            會員中心
-          </a>
-        </nav> -->
-
-
-
       </div>
-    </div>
+    </nav>
   </header>
+  <!-- UI-Header -->
+  <!-- <header class="border-bottom">
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <img src="/logo.png" alt="" height="32" class="me-2">
+          稀寵搜尋
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                搜尋頁
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/search/clinic">找診所</a></li>
+                <li><a class="dropdown-item" href="/search/hotel">找旅館</a></li>
+                <li><a class="dropdown-item" href="/search/store">找賣家</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="/member">
+                <i class="bi bi-person-circle me-1"></i>
+                稀寵資訊
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center" href="/member">
+                <i class="bi bi-person-circle me-1"></i>
+                投稿/回報
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                登入/註冊
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/search/clinic">找診所</a></li>
+                <li><a class="dropdown-item" href="/search/hotel">找旅館</a></li>
+                <li><a class="dropdown-item" href="/search/store">找賣家</a></li>
+              </ul>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="/member">
+                  <i class="bi bi-person-circle me-1"></i>
+                  會員中心
+                </a>
+              </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header> -->
+  
 
   <!-- Content -->
   <main class="container py-5">
-    <div style="height:900px;background:#F0F0F0;border-radius:8px;">
+    <div style="background:#F0F0F0;border-radius:8px;">
       <h1 class="text-primary">Hello Bootstrap + Sass</h1>
-      <hr />
-      <button class="btn btn-primary">Bootstrap Button</button>
-      <button class="ui-btn">ui-btn</button>
-      <button class="ui-btn ui-btn-primary">primary</button>
-      <button class="ui-btn ui-btn-default ui-btn-lg">default&lg</button>
-      <button class="ui-btn ui-btn-warning">warning</button>
-      <hr />  
-      <div class="ui-carousel__controls">
-        <button class="ui-carousel__btn" aria-label="Previous">
-          <i data-feather="chevron-left"></i>
-        </button>
-
-        <button class="ui-carousel__btn is-active" aria-label="Next">
-          <i data-feather="chevron-right"></i>
-        </button>
-        <button class="ui-carousel__btn ui-carousel__btn--sm" aria-label="Next">
-          <i data-feather="chevron-right"></i>
-        </button>
+      <hr>
+      <div class="row">
+        <div class="col-6">
+          <button class="ui-btn ui-btn-primary ui-btn-sm">小按鈕</button>
+          <button class="ui-btn ui-btn-primary">預設按鈕</button>
+          <button class="ui-btn ui-btn-primary ui-btn-lg">大按鈕</button>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-primary">Bootstrap Button</button>
+          <button class="ui-btn ui-btn-primary">投搞稀寵情報</button>
+          <button class="ui-btn ui-btn-primary">更多文章</button>
+          <button class="ui-btn ui-btn-default">更多文章</button>
+          <button class="ui-btn ui-btn-warning">更多文章</button>
+        </div>
       </div>
-      
-      <hr />
-      <nav class="ui-pagination" aria-label="Pagination">
-        <button
-          class="ui-pagination__item ui-pagination__item--prev is-disabled"
-          aria-label="Previous page"
-          disabled
-        >
-          ‹
-        </button>
+      <hr>
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col-4 ui-carousel__controls">
+              <button class="ui-carousel__btn" aria-label="Previous">
+                <i data-feather="chevron-left"></i>
+              </button>
+            </div>
+            <div class="col-4 ui-carousel__controls">
+              <button class="ui-carousel__btn is-active" aria-label="Next">
+                <i data-feather="chevron-right"></i>
+              </button>
+            </div>
+            <div class="col-4 ui-carousel__controls">
+              <button class="ui-carousel__btn ui-carousel__btn--sm" aria-label="Next">
+                <i data-feather="chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div> 
+        <div class="col-6">
+          <nav class="ui-pagination" aria-label="Pagination">
+            <button
+              class="ui-pagination__item ui-pagination__item--prev is-disabled"
+              aria-label="Previous page"
+              disabled
+            >
+              ‹
+            </button>
 
-        <button class="ui-pagination__item">1</button>
-
-        <button class="ui-pagination__item is-active" aria-current="page">
-          2
-        </button>
-
-        <button class="ui-pagination__item">3</button>
-
-        <button
-          class="ui-pagination__item ui-pagination__item--next"
-          aria-label="Next page"
-        >
-          ›
-        </button>
-      </nav>
+            <button
+              class="ui-pagination__item ui-pagination__item--prev"
+              aria-label="Previous page"
+            >
+              ‹
+            </button>
+            <button class="ui-pagination__item">1</button>
+            <button class="ui-pagination__item is-active" aria-current="page">
+              2
+            </button>
+            <button class="ui-pagination__item">3</button>
+            <button
+              class="ui-pagination__item ui-pagination__item--next"
+              aria-label="Next page"
+            >
+              ›
+            </button>
+          </nav>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <!-- <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              Bootstrap-診所
+            </label>
+          </div>
+        </div> -->
+        <div class="col-6">
+          <div class="ui-form-check">
+            <label class="ui-form-check">
+              <input type="checkbox" class="ui-form-check__input" />
+              <span class="ui-form-check__icon"></span>
+              <span class="ui-form-check__label">診所</span>
+            </label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              Bootstrap-診所
+            </label>
+          </div>
+        </div>
+      </div>
 
 
     </div>
@@ -125,10 +268,6 @@
       <div style="height:120px;background:#F0F0F0;border-radius:8px;"></div>
     </div>
   </footer>
-
-  
-  
-
   <!-- Bootstrap JS（npm 版） -->
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
