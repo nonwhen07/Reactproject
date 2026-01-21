@@ -7,16 +7,18 @@
 
   <!-- 編譯後的 CSS（含 Bootstrap + 樣式） -->
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Header -->
-  <header class="border-bottom">
+  <header class="header border-bottom">
     <nav class="navbar navbar-expand-lg bg-white">
       <div class="container">
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="./index.html">
-          <img src="/logo.png" alt="" height="32" class="me-2">
-          稀寵搜尋
+          <img src="../src/assets/logo.png" alt="稀寵搜尋" height="32" class="me-2">
         </a>
         <!-- 手機版漢堡 -->
         <button
@@ -32,7 +34,7 @@
         <!-- 導覽列 -->
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown ui-dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -42,9 +44,9 @@
                 搜尋頁
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./search/clinic">找診所</a></li>
-                <li><a class="dropdown-item" href="./search/hotel">找旅館</a></li>
-                <li><a class="dropdown-item" href="./search/store">找賣家</a></li>
+                <li><a class="dropdown-item" href="./index.html">找診所</a></li>
+                <li><a class="dropdown-item" href="./index.html">找旅館</a></li>
+                <li><a class="dropdown-item" href="./index.html">找賣家</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -69,9 +71,9 @@
                 登入/註冊
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./member/login">登入會員</a></li>
-                <li><a class="dropdown-item" href="./member/reg">註冊會員</a></li>
-                <li><a class="dropdown-item" href="./member/forget">忘記密碼</a></li>
+                <li><a class="dropdown-item" href="./index.html">登入會員</a></li>
+                <li><a class="dropdown-item" href="./index.html">註冊會員</a></li>
+                <!-- <li><a class="dropdown-item" href="./member/forgetPW">忘記密碼</a></li> -->
               </ul>
               <li class="nav-item">
                 <a class="nav-link d-flex align-items-center" href="/member">
