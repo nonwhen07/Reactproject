@@ -1,94 +1,59 @@
 // _header.scss
 @use '../helpers/variables' as *;
-
+@use '../components/dropdown-skin' as *;
 
 .header {
+  // ===== Header Layout（只負責排版）=====
   .navbar {
-    min-height: 72px; // 讓整條導覽列高度接近設計稿
-  }
-
-  .navbar-brand {
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-  }
-
-  .nav-link {
-    font-size: 15px;
-    font-weight: 500;
-    color: #333;
-
-    &:hover {
-      color: $ui-color-primary; // 你們設計稿的主色
-    }
+    min-height: 156px;
   }
 
   .navbar-nav {
-    gap: 12px; // 取代 gap-lg-2 的感覺
+    min-height: 32px;
+    gap: 8px;
   }
-
-  .nav-item {
-    padding: 0 4px;
-  }
-
-  .nav-link {
-    padding: 6px 10px;
-    border-radius: 999px;
-
-    &:hover {
-      background: rgba(0,0,0,.04);
-    }
-  }
-
-  .ui-dropdown {
-    
-    .dropdown-toggle{
-      font-family: "Chiron GoRound TC", sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.5;
-      letter-spacing: 0.02em;
-      text-align: center;
-      color: #333;
-      padding: 4px 16px;
-      border-radius: 40px;
-
-      &:hover {
-        background-color: rgba(0,0,0,.04);
-        color: $ui-color-primary;
-      }
-
-    }
-
-    .dropdown-menu {
-      left: 50%;
-      transform: translateX(-50%);
-      border: none;
-      border-radius: 4px;
-      box-shadow: 0 8px 20px rgba(0,0,0,.08);
-      padding: 8px;
-      min-width: 97px;
-    }
-
-    .dropdown-item {
-      font-family: "Chiron GoRound TC", sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.5;
-      letter-spacing: 0.02em;
-      text-align: center;
-      border-radius: 40px;
-      padding: 4px 16px;
-
-      &:hover,
-      &.active {
-        background-color: $ui-color-secondary;
-        color: #1c7ed6;
-      }
-    }
-  }
-
-  
 }
 
+// ===== UI Component: Nav Item =====
+.ui-nav-item {
 
+  // Nav Link（所有導覽文字風格）
+  .nav-link {
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: $ui-neutral-800;
+    padding: 4px 16px;
+    border-radius: 40px;
+    min-width: 81px;
+
+    &:hover {
+      background-color: $ui-color-secondary;
+      // color: $ui-color-primary;
+    }
+  }
+
+  // 關掉 Bootstrap 預設箭頭（如果你要）
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  // Dropdown Menu 外框
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    padding: 8px;
+    min-width: 97px;
+  }
+
+  // Dropdown Item 文字樣式
+  .dropdown-item {
+    @extend %ui-dropdown-item-base;
+  }
+}

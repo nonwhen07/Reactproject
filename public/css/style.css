@@ -11859,74 +11859,56 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.header .navbar {
-  min-height: 72px;
-}
-.header .navbar-brand {
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0.5px;
-}
-.header .nav-link {
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-}
-.header .nav-link:hover {
-  color: #5B8DDE;
-}
-.header .navbar-nav {
-  gap: 12px;
-}
-.header .nav-item {
-  padding: 0 4px;
-}
-.header .nav-link {
-  padding: 6px 10px;
-  border-radius: 999px;
-}
-.header .nav-link:hover {
-  background: rgba(0, 0, 0, 0.04);
-}
-.header .ui-dropdown .dropdown-toggle {
+.ui-nav-item .dropdown-item {
   font-family: "Chiron GoRound TC", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
-  color: #333;
+  border-radius: 40px;
+  padding: 4px 16px;
+  color: #262626;
+}
+.ui-nav-item .dropdown-item:hover, .ui-nav-item .active.dropdown-item {
+  background-color: #C9D9F4;
+}
+
+.header .navbar {
+  min-height: 156px;
+}
+.header .navbar-nav {
+  min-height: 32px;
+  gap: 8px;
+}
+
+.ui-nav-item .nav-link {
+  font-family: "Chiron GoRound TC", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #262626;
   padding: 4px 16px;
   border-radius: 40px;
+  min-width: 81px;
 }
-.header .ui-dropdown .dropdown-toggle:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-  color: #5B8DDE;
+.ui-nav-item .nav-link:hover {
+  background-color: #C9D9F4;
 }
-.header .ui-dropdown .dropdown-menu {
+.ui-nav-item .dropdown-toggle::after {
+  display: none;
+}
+.ui-nav-item .dropdown-menu {
   left: 50%;
   transform: translateX(-50%);
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   padding: 8px;
   min-width: 97px;
 }
-.header .ui-dropdown .dropdown-item {
-  font-family: "Chiron GoRound TC", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  text-align: center;
-  border-radius: 40px;
-  padding: 4px 16px;
-}
-.header .ui-dropdown .dropdown-item:hover, .header .ui-dropdown .dropdown-item.active {
-  background-color: #C9D9F4;
-  color: #1c7ed6;
-}
-
 /* --- 基礎樣式：定義所有按鈕共用的外觀，並以「中等 (MD)」作為預設值 --- */
 .ui-btn {
   display: inline-flex;
@@ -11987,48 +11969,6 @@ textarea.form-control-lg {
 }
 .ui-btn-warning:hover {
   background-color: rgb(218.2, 132.1370517928, 0);
-}
-
-/* =========================
-  Select / Dropdown
-========================= */
-.ui-select {
-  position: relative;
-}
-
-.ui-select__menu {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.5rem;
-  border-radius: 0.75rem;
-  background-color: #FFFFFF;
-}
-
-/* option item */
-.ui-select__option {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  background-color: transparent;
-  color: #0A0A0A;
-  border: none;
-  text-align: left;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  /* hover = selected */
-}
-.ui-select__option:hover, .ui-select__option.is-selected {
-  background-color: #C9D9F4;
-}
-.ui-select__option {
-  /* keyboard focus */
-}
-.ui-select__option:focus-visible {
-  outline: 2px solid #5B8DDE;
-  outline-offset: 2px;
 }
 
 /* =====================================
