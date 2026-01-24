@@ -1,0 +1,69 @@
+// _layout.scss：所有共用版面骨架 像 ui-container, ui-section
+
+@use '../helpers/variables' as *;
+
+// ui-container 系列
+.ui-container {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.ui-canvas {
+  max-width: 1840px;
+  margin: 0 auto;
+  border-radius: 40px;
+}
+
+.ui-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+// 共用 section
+.ui-section {
+  padding: 48px 0;
+}
+
+.ui-section--light { 
+  background: $ui-bg-default; 
+}
+
+.ui-section--yellow { 
+  background: $ui-color-warning 
+}
+
+.ui-section--info {
+  background: $ui-color-primary;
+}
+
+
+
+
+/* 裝飾層 */
+.subpage-banner {
+  background-color: $ui-color-secondary;
+  border-radius: 24px;
+  padding: 60px 0; /* 給內容一點上下間距 */
+  position: relative;
+  overflow: hidden; /* 防止浮水印超出邊界 */
+}
+
+/* 浮水印文字 */
+.subpage-banner::after {
+  content: "Search Results";
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  font-size: 80px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.05); /* 極淡的顏色 */
+  pointer-events: none; /* 確保滑鼠點不到它 */
+}
+
+/* 麵包屑容器 */
+.breadcrumb-overlap {
+  margin-top: -25px; /* 向上壓在 banner 上 */
+  position: relative;
+  z-index: 2;
+}

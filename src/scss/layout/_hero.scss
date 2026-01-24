@@ -1,0 +1,31 @@
+// _hero.scss：專門負責 Hero / Page Banner 結構
+
+@use '../helpers/variables' as *;
+
+.ui-hero {
+  position: relative;
+}
+
+// __ 代表 Element (元素) __bg 和 __container 是ui-hero組件內部的零件。
+
+.ui-hero__bg {
+  max-width: 1840px;
+  margin: 0 auto;
+  border-radius: 24px;
+}
+
+.ui-hero__container {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+// -- 代表 Modifier (修飾符) --home 和 --search 是ui-hero組件的變體（版本）。
+
+.ui-hero--home {
+  min-height: 560px;
+}
+
+.ui-hero--search {
+  min-height: 240px;
+}

@@ -13,9 +13,9 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="header border-bottom">
+  <header class="header border-bottom ui-wrapper">
     <nav class="navbar navbar-expand-lg bg-white">
-      <div class="container">
+      <div class="container ui-container">
         <a class="navbar-brand d-flex align-items-center" href="./index.html">
           <img src="../src/assets/logo.png" alt="稀寵搜尋.logo" height="32" class="me-2">
         </a>
@@ -83,109 +83,131 @@
     </nav>
   </header>
 
-  
-
   <!-- Content -->
-  <main class="container py-5">
-    <div style="background:#F0F0F0;border-radius:8px;">
-      <h1 class="text-primary">Hello Bootstrap + Sass</h1>
-      <hr>
-      <div class="row">
-        <div class="col-6">
-          <button class="ui-btn ui-btn-primary ui-btn-sm">小按鈕</button>
-          <button class="ui-btn ui-btn-primary">預設按鈕</button>
-          <button class="ui-btn ui-btn-primary ui-btn-lg">大按鈕</button>
-        </div>
-        <div class="col-6">
-          <button class="btn btn-primary">Bootstrap Button</button>
-          <button class="ui-btn ui-btn-primary">投搞稀寵情報</button>
-          <button class="ui-btn ui-btn-primary">更多文章</button>
-          <button class="ui-btn ui-btn-default">更多文章</button>
-          <button class="ui-btn ui-btn-warning">更多文章</button>
+  <main class="container py-5 ui-wrapper">
+    <!-- <section class="ui-hero ui-hero--home">
+      <div class="ui-hero__bg">
+        <div class="ui-hero__container">
+          <h1 class="ui-hero__title">稀寵搜尋(Hero-Banner測試+設定框架樣式，不設定內容)</h1>
+          <p class="ui-hero__subtitle">全台最大稀有寵物資訊平台</p>
         </div>
       </div>
-      <hr>
-      <div class="row">
-        <div class="col-6">
-          <div class="row">
-            <div class="col-4 ui-carousel__controls">
-              <button class="ui-carousel__btn" aria-label="Previous">
-                <i data-feather="chevron-left"></i>
-              </button>
-            </div>
-            <div class="col-4 ui-carousel__controls">
-              <button class="ui-carousel__btn is-active" aria-label="Next">
-                <i data-feather="chevron-right"></i>
-              </button>
-            </div>
-            <div class="col-4 ui-carousel__controls">
-              <button class="ui-carousel__btn ui-carousel__btn--sm" aria-label="Next">
-                <i data-feather="chevron-right"></i>
-              </button>
-            </div>
+    </section> -->
+    
+    <section class="ui-wrapper ui-section ui-section--light">
+      <div class="ui-canvas subpage-banner">
+        <div class="ui-container d-flex justify-content-between">
+          <div>
+            <h1 class="fw-bold">你負責愛，我們負責搜</h1>
+            <p>找寵物商店，就從這裡</p>
           </div>
-        </div> 
-        <div class="col-6">
-          <nav class="ui-pagination" aria-label="Pagination">
-            <button
-              class="ui-pagination__item ui-pagination__item--prev is-disabled"
-              aria-label="Previous page"
-              disabled
-            >
-              ‹
-            </button>
-
-            <button
-              class="ui-pagination__item ui-pagination__item--prev"
-              aria-label="Previous page"
-            >
-              ‹
-            </button>
-            <button class="ui-pagination__item">1</button>
-            <button class="ui-pagination__item is-active" aria-current="page">
-              2
-            </button>
-            <button class="ui-pagination__item">3</button>
-            <button
-              class="ui-pagination__item ui-pagination__item--next"
-              aria-label="Next page"
-            >
-              ›
-            </button>
-          </nav>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <!-- <div class="col-6">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-            <label class="form-check-label" for="flexCheckIndeterminate">
-              Bootstrap-診所
-            </label>
-          </div>
-        </div> -->
-        <div class="col-6">
-          <div class="ui-form-check">
-            <label class="ui-form-check">
-              <input type="checkbox" class="ui-form-check__input" />
-              <span class="ui-form-check__icon"></span>
-              <span class="ui-form-check__label">診所</span>
-            </label>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-            <label class="form-check-label" for="flexCheckIndeterminate">
-              Bootstrap-診所
-            </label>
+          <div class="bg-white p-3 rounded-pill shadow-sm align-self-center">
+            吃的、洗的、住的、醫療一次找齊
           </div>
         </div>
       </div>
+      <div class="ui-container breadcrumb-overlap">
+        <nav class="d-inline-block bg-white px-3 py-1 rounded-top">
+          首頁 > 搜尋結果
+        </nav>
+      </div>
+    </section>
 
+    <section class="ui-wrapper ui-section ui-section--info">
+      <div class="ui-container">
+        <div class="ui-hero__bg">
+          <div class="ui-hero__container">
+            <h1 class="text-primary">Hello Bootstrap + Sass 自訂義UI展示區(假想ui-section--info展示)</h1>
+            <hr>
+            <div class="row">
+              <div class="col-6">
+                <button class="ui-btn ui-btn-primary ui-btn-sm">小按鈕</button>
+                <button class="ui-btn ui-btn-primary">預設按鈕</button>
+                <button class="ui-btn ui-btn-primary ui-btn-lg">大按鈕</button>
+              </div>
+              <div class="col-6">
+                <button class="btn btn-primary">Bootstrap Button</button>
+                <button class="ui-btn ui-btn-primary">投搞稀寵情報</button>
+                <button class="ui-btn ui-btn-primary">更多文章</button>
+                <button class="ui-btn ui-btn-default">更多文章</button>
+                <button class="ui-btn ui-btn-warning">更多文章</button>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-4 ui-carousel__controls">
+                    <button class="ui-carousel__btn" aria-label="Previous">
+                      <i data-feather="chevron-left"></i>
+                    </button>
+                  </div>
+                  <div class="col-4 ui-carousel__controls">
+                    <button class="ui-carousel__btn is-active" aria-label="Next">
+                      <i data-feather="chevron-right"></i>
+                    </button>
+                  </div>
+                  <div class="col-4 ui-carousel__controls">
+                    <button class="ui-carousel__btn ui-carousel__btn--sm" aria-label="Next">
+                      <i data-feather="chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div> 
+              <div class="col-6">
+                <nav class="ui-pagination" aria-label="Pagination">
+                  <button
+                    class="ui-pagination__item ui-pagination__item--prev is-disabled"
+                    aria-label="Previous page"
+                    disabled
+                  >
+                    ‹
+                  </button>
 
-    </div>
+                  <button
+                    class="ui-pagination__item ui-pagination__item--prev"
+                    aria-label="Previous page"
+                  >
+                    ‹
+                  </button>
+                  <button class="ui-pagination__item">1</button>
+                  <button class="ui-pagination__item is-active" aria-current="page">
+                    2
+                  </button>
+                  <button class="ui-pagination__item">3</button>
+                  <button
+                    class="ui-pagination__item ui-pagination__item--next"
+                    aria-label="Next page"
+                  >
+                    ›
+                  </button>
+                </nav>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-6">
+                <div class="ui-form-check">
+                  <label class="ui-form-check">
+                    <input type="checkbox" class="ui-form-check__input" />
+                    <span class="ui-form-check__icon"></span>
+                    <span class="ui-form-check__label">診所</span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    Bootstrap-診所
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->

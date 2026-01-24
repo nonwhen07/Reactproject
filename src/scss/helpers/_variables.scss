@@ -11,7 +11,7 @@ $ui-neutral-50:  #FFFFFF;
 // Blue
 $ui-blue-700: #1F63B2;
 $ui-blue-500: #5B8DDE;
-$ui-blue-200: #C9D9F4;
+$ui-blue-200: #C9E9F4;
 
 // Yellow / Orange（Accent）
 $ui-yellow-400: #FEC631;
@@ -39,10 +39,10 @@ $ui-bg-subtle: $ui-neutral-100;
 $ui-border-default: $ui-neutral-200;
 
 
-// // breakpoints 視覺分段點-mobile/pad/desktop/desktop-xl
-// $breakpoints: (
-//   mobile: 0,
-//   pad: 576px,
-//   desktop: 992px,
-//   desktop-xl: 1200px,
-// );
+// breakpoints 視覺分段點-mobile/pad/desktop/desktop-xl
+$breakpoints: (
+  mobile: 0,
+  pad: 576px,
+  desktop: 992px,
+  desktop-xl: 1200px,
+);
