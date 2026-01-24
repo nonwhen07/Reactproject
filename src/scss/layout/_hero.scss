@@ -7,25 +7,105 @@
 }
 
 // __ 代表 Element (元素) __bg 和 __container 是ui-hero組件內部的零件。
-
 .ui-hero__bg {
-  max-width: 1840px;
   margin: 0 auto;
-  border-radius: 24px;
 }
 
 .ui-hero__container {
-  max-width: 1296px;
   margin: 0 auto;
-  padding: 48px 24px;
 }
 
 // -- 代表 Modifier (修飾符) --home 和 --search 是ui-hero組件的變體（版本）。
-
 .ui-hero--home {
   min-height: 560px;
 }
 
 .ui-hero--search {
   min-height: 240px;
+}
+
+
+/* 裝飾層 */
+.ui-subHero {
+  position: relative;
+  background-color: $ui-color-secondary;
+  border-radius: 24px;
+  overflow: hidden; /* 防止浮水印超出邊界 */
+
+  min-height: 296px;
+  padding-top: 72px;
+}
+
+/* 浮水印文字 */
+.ui-subHero::after {
+  /* 關鍵：讓內容直接讀取 HTML 上的 data-watermark */
+  content: attr(data-watermark);
+
+  position: absolute; /* 讓它對齊 1296px 內容區的右側 */
+  right: calc((75% - 1296px) / 2); 
+  bottom: -10px; /* 稍微往下掉一點，製造破版貼合感 */
+  color: rgba(0, 0, 0, 0.03); /* 極淡，若隱若現 */
+  font-size: 120px; /* 夠大才像浮水印 */
+  font-weight: 700;
+  line-height: 1; /* 重要：消除文字上下預留空間，讓貼合更精準 */
+  letter-spacing: 2%;
+  white-space: nowrap;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ui-subHero__content {
+  gap: 8px;
+  min-height: 96px;
+
+  h1 {
+    color: $ui-neutral-800;
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 2%;
+  }
+
+  p {
+    color: $ui-neutral-800;
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 120%;  
+    letter-spacing: 5%;
+  }
+}
+
+.ui-subHero__aside {
+  background: $ui-bg-default;
+  gap: 10px;
+  border-radius: 12px;
+  min-width: 512px;
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: $ui-color-primary-sub;
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;  
+    letter-spacing: 5%;
+  }
+}
+
+
+
+
+
+/* 麵包屑容器 */
+.breadcrumb-overlap {
+  margin-top: -25px; /* 向上壓在 banner 上 */
+  position: relative;
+  z-index: 2;
+  min-height: 56px;
+  min-width: 306px;
 }
