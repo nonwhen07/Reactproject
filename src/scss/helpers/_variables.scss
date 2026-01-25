@@ -20,7 +20,6 @@ $ui-orange-500: #FF9C04;
 // Brand
 $ui-color-primary: $ui-blue-500;
 $ui-color-primary-hover: $ui-blue-700;
-$ui-color-primary-sub: $ui-blue-700;
 
 // Secondary（次行動）
 $ui-color-secondary: $ui-blue-200;
@@ -28,6 +27,11 @@ $ui-color-secondary: $ui-blue-200;
 // Status
 $ui-color-warning: $ui-yellow-400;
 $ui-color-danger: $ui-orange-500;
+
+// Navigation
+$ui-nav-link: $ui-neutral-800;
+$ui-nav-link-hover: $ui-blue-500;
+$ui-nav-link-active: $ui-blue-700;
 
 // Text
 $ui-text-primary: $ui-neutral-950;

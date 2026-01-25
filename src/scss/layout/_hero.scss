@@ -30,7 +30,7 @@
   position: relative;
   background-color: $ui-color-secondary;
   border-radius: 24px;
-  overflow: hidden; /* 防止浮水印超出邊界 */
+  overflow: hidden; /* 逼免止浮水印超勒邊界 */
 
   min-height: 296px;
   padding-top: 72px;
@@ -43,15 +43,22 @@
 
   position: absolute; /* 讓它對齊 1296px 內容區的右側 */
   right: calc((75% - 1296px) / 2); 
-  bottom: -10px; /* 稍微往下掉一點，製造破版貼合感 */
-  color: rgba(0, 0, 0, 0.03); /* 極淡，若隱若現 */
-  font-size: 120px; /* 夠大才像浮水印 */
+  bottom: -20px; /* 稍微往下掉一點 */
+  // right: 48px;
+  // bottom: 24px;
+
+
+  // color: $ui-color-primary; /* 晚點補上淡淡、透明感的感覺 */
+  font-size: 128px;
   font-weight: 700;
-  line-height: 1; /* 重要：消除文字上下預留空間，讓貼合更精準 */
+  color: rgba($ui-blue-500, 0.08); // 關鍵在 0.06 ~ 0.1
+  line-height: 100%;
   letter-spacing: 2%;
   white-space: nowrap;
   z-index: 1;
   pointer-events: none;
+  user-select: none;
+  filter: blur(0.5px);
 }
 
 .ui-subHero__content {
@@ -87,14 +94,27 @@
   align-items: center;
   justify-content: center;
 
-  p {
-    color: $ui-color-primary-sub;
+  p, a {
+    color: $ui-nav-link-active;
     font-family: "Chiron GoRound TC", sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 120%;  
-    letter-spacing: 5%;
+    letter-spacing: 0.05em;
+    transition: color 0.15s ease, transform 0.1s ease;   // 加上這行，變化才會順滑
+
+    &:hover {
+      color: $ui-nav-link-hover;            // 例如藍色 $sui-blue-500
+      // text-decoration: underline;         // 可選：很多設計會在 hover 加底線
+      // 或 cursor: pointer;                 // 如果想要更像連結感
+    }
+
+    &:active {
+      color: $ui-nav-link-active;           // 通常更深，例如 $sui-blue-700
+      transform: translateY(1px);           // 輕微下沉，模擬按下去
+    }
   }
+
 }
 
 
@@ -102,10 +122,54 @@
 
 
 /* 麵包屑容器 */
-.breadcrumb-overlap {
-  margin-top: -25px; /* 向上壓在 banner 上 */
-  position: relative;
-  z-index: 2;
-  min-height: 56px;
-  min-width: 306px;
+.ui-subHero__breadcrumb {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px; // 半貼出來
+
+  .ui-breadcrumb {
+    min-width: 306px;
+    min-height: 56px;
+    display: inline-block;
+    background: $ui-neutral-50;
+    padding: 24px 24px 8px 24px;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 -1px 0 rgba(0,0,0,.06);
+
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-decoration: none;
+
+    a {
+      color: $ui-nav-link;
+      text-decoration: none;
+      
+      &:hover {
+        color: $ui-nav-link-hover;
+      }
+    }
+
+    &__current {
+      color: $ui-nav-link-active;
+
+      &:hover {
+        color: $ui-nav-link-hover;
+      }
+    }
+
+    i, svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2;
+      color: $ui-text-muted;
+      vertical-align: middle;
+    }
+  }
+
+  
+  
 }

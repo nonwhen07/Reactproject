@@ -11897,7 +11897,6 @@ textarea {
   max-width: 1840px;
   margin: 0 auto;
   border-radius: 40px;
-  padding: 48px 0;
 }
 
 .ui-wrapper {
@@ -11942,7 +11941,7 @@ textarea {
   position: relative;
   background-color: #C9E9F4;
   border-radius: 24px;
-  overflow: hidden; /* 防止浮水印超出邊界 */
+  overflow: hidden; /* 逼免止浮水印超勒邊界 */
   min-height: 296px;
   padding-top: 72px;
 }
@@ -11953,15 +11952,17 @@ textarea {
   content: attr(data-watermark);
   position: absolute; /* 讓它對齊 1296px 內容區的右側 */
   right: calc((75% - 1296px) / 2);
-  bottom: -10px; /* 稍微往下掉一點，製造破版貼合感 */
-  color: rgba(0, 0, 0, 0.03); /* 極淡，若隱若現 */
-  font-size: 120px; /* 夠大才像浮水印 */
+  bottom: -20px; /* 稍微往下掉一點 */
+  font-size: 128px;
   font-weight: 700;
-  line-height: 1; /* 重要：消除文字上下預留空間，讓貼合更精準 */
+  color: rgba(91, 141, 222, 0.08);
+  line-height: 100%;
   letter-spacing: 2%;
   white-space: nowrap;
   z-index: 1;
   pointer-events: none;
+  user-select: none;
+  filter: blur(0.5px);
 }
 
 .ui-subHero__content {
@@ -11995,22 +11996,64 @@ textarea {
   align-items: center;
   justify-content: center;
 }
-.ui-subHero__aside p {
+.ui-subHero__aside p, .ui-subHero__aside a {
   color: #2F6382;
   font-family: "Chiron GoRound TC", sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 120%;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
+  transition: color 0.15s ease, transform 0.1s ease;
+}
+.ui-subHero__aside p:hover, .ui-subHero__aside a:hover {
+  color: #5B8DDE;
+}
+.ui-subHero__aside p:active, .ui-subHero__aside a:active {
+  color: #2F6382;
+  transform: translateY(1px);
 }
 
 /* 麵包屑容器 */
-.breadcrumb-overlap {
-  margin-top: -25px; /* 向上壓在 banner 上 */
-  position: relative;
-  z-index: 2;
-  min-height: 56px;
+.ui-subHero__breadcrumb {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+}
+.ui-subHero__breadcrumb .ui-breadcrumb {
   min-width: 306px;
+  min-height: 56px;
+  display: inline-block;
+  background: #FFFFFF;
+  padding: 24px 24px 8px 24px;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.06);
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-decoration: none;
+}
+.ui-subHero__breadcrumb .ui-breadcrumb a {
+  color: #262626;
+  text-decoration: none;
+}
+.ui-subHero__breadcrumb .ui-breadcrumb a:hover {
+  color: #5B8DDE;
+}
+.ui-subHero__breadcrumb .ui-breadcrumb__current {
+  color: #2F6382;
+}
+.ui-subHero__breadcrumb .ui-breadcrumb__current:hover {
+  color: #5B8DDE;
+}
+.ui-subHero__breadcrumb .ui-breadcrumb i, .ui-subHero__breadcrumb .ui-breadcrumb svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+  color: #A3A3A3;
+  vertical-align: middle;
 }
 
 .ui-nav-item .dropdown-item {

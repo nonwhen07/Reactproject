@@ -13,7 +13,7 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="header border-bottom ui-wrapper">
+  <header class="header ui-wrapper">
     <nav class="navbar navbar-expand-lg bg-white">
       <div class="container ui-container">
         <a class="navbar-brand d-flex align-items-center" href="./index.html">
@@ -84,36 +84,33 @@
   </header>
 
   <!-- Content -->
-  <main class="container py-5 ui-wrapper">
-    <!-- <section class="ui-hero ui-hero--home">
-      <div class="ui-hero__bg">
-        <div class="ui-hero__container">
-          <h1 class="ui-hero__title">稀寵搜尋(Hero-Banner測試+設定框架樣式，不設定內容)</h1>
-          <p class="ui-hero__subtitle">全台最大稀有寵物資訊平台</p>
-        </div>
-      </div>
-    </section> -->
-    
+  <main class="container ui-wrapper">
     <section class="ui-section ui-section--light">
       <div class="ui-canvas ui-subHero" data-watermark="Search Results">
         <div class="ui-container d-flex justify-content-between">
           <div class="ui-subHero__content">
-            <h1 class="fw-bold">你負責愛，我們負責搜</h1>
+            <h1>你負責愛，我們負責搜</h1>
             <p>找寵物商店，就從這裡</p>
           </div>
           <div class="ui-subHero__aside shadow-sm">
             <p> 吃的、洗的、住的、醫療一次找齊</p>
           </div>
         </div>
-      </div>
-      <div class="ui-container breadcrumb-overlap">
-        <nav class="d-inline-block bg-white px-3 py-1 rounded-top">
-          首頁 > 搜尋結果
-        </nav>
+        <div class="ui-subHero__breadcrumb">
+          <div class="ui-container">
+            <nav class="ui-breadcrumb">
+              <div class="d-flex align-items-center gap-1">
+                <a href="#">首頁</a> 
+                <i data-feather="chevron-right"></i> 
+                <span class="ui-breadcrumb__current">搜尋結果</span>
+              </div>
+            </nav>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="ui-section ui-section--info">
+    <section class="ui-section ui-section--info my-5">
       <div class="ui-container">
         <div class="ui-hero__bg">
           <div class="ui-hero__container">
