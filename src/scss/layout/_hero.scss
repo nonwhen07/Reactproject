@@ -1,5 +1,6 @@
 // _hero.scss：專門負責 Hero / Page Banner 結構
 
+@use '../helpers/mixins' as *;
 @use '../helpers/variables' as *;
 
 .ui-hero {
@@ -25,82 +26,123 @@
 }
 
 
-/* 裝飾層 */
+/* 各自個分頁的Sub-HeroBanner */
 .ui-subHero {
   position: relative;
-  background-color: $ui-color-secondary;
-  border-radius: 24px;
-  overflow: hidden; /* 逼免止浮水印超勒邊界 */
+  background-color: $ui-color-secondary; 
+  padding: 64px 12px 0 12px;
+  gap: 64px;
+  min-height: 297px;
 
-  min-height: 296px;
-  padding-top: 72px;
+  @include respond(desktop) {
+    // display: flex; 
+    // justify-content: space-between;
+    padding: 72px 272px 0 272px;
+    gap: 72px;
+    overflow: hidden; /* 逼免止浮水印超勒邊界 */
+    border-radius: 24px;
+  }
 }
 
-/* 浮水印文字 */
+/* 浮水印文字：mobile 預設「不存在」 */
 .ui-subHero::after {
-  /* 關鍵：讓內容直接讀取 HTML 上的 data-watermark */
-  content: attr(data-watermark);
+  content: none; // mobile：根本不產生 pseudo-element
 
-  position: absolute; /* 讓它對齊 1296px 內容區的右側 */
-  right: calc((75% - 1296px) / 2); 
-  bottom: -20px; /* 稍微往下掉一點 */
-  // right: 48px;
-  // bottom: 24px;
+  @include respond(desktop) {
+    content: attr(data-watermark);/* 關鍵：讓內容直接讀取 HTML 上的 data-watermark */
 
+    position: absolute;
+    right: calc((75% - 1296px) / 2);
+    bottom: -20px;
 
-  // color: $ui-color-primary; /* 晚點補上淡淡、透明感的感覺 */
-  font-size: 128px;
-  font-weight: 700;
-  color: rgba($ui-blue-500, 0.08); // 關鍵在 0.06 ~ 0.1
-  line-height: 100%;
-  letter-spacing: 2%;
-  white-space: nowrap;
-  z-index: 1;
-  pointer-events: none;
-  user-select: none;
-  filter: blur(0.5px);
+    font-size: 128px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 2%;
+
+    color: rgba($ui-blue-500, 0.08);
+    white-space: nowrap;
+
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    filter: blur(0.5px);
+  }
 }
 
+/* 包裹subHero content和aside餅處理desktop/mobile的顯示 */
+.ui-subHero__layout {
+  // mobile
+  display: block;
+  text-align: center;
+
+  @include respond(desktop) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* subHero content主題文字 */
 .ui-subHero__content {
   gap: 8px;
-  min-height: 96px;
+  min-height: 61px;
 
   h1 {
     color: $ui-neutral-800;
     font-family: "Chiron GoRound TC", sans-serif;
-    font-size: 48px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 120%;
-    letter-spacing: 2%;
+    letter-spacing: 0.05em;
   }
 
   p {
     color: $ui-neutral-800;
     font-family: "Chiron GoRound TC", sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 120%;  
-    letter-spacing: 5%;
+    line-height: 150%;  
+    letter-spacing: 2%;
+  }
+
+  @include respond(desktop) {
+    min-height: 96px;
+
+    h1 {
+      font-size: 48px;
+      letter-spacing: 2%;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 120%;  
+      letter-spacing: 0.025m;
+    }
   }
 }
 
+/* subHero aside 方框+風味文字 */
 .ui-subHero__aside {
-  background: $ui-bg-default;
+  background-color: $ui-bg-default;
+  padding: 8px 24px;
   gap: 10px;
   border-radius: 12px;
-  min-width: 512px;
-  min-height: 96px;
+  // min-width: 303px;
+  // min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 24px auto 0 auto;
 
-  p, a {
+  p {
     color: $ui-nav-link-active;
     font-family: "Chiron GoRound TC", sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 120%;  
-    letter-spacing: 0.05em;
+    line-height: 150%;  
+    letter-spacing: 0.02em;
     transition: color 0.15s ease, transform 0.1s ease;   // 加上這行，變化才會順滑
 
     &:hover {
@@ -115,11 +157,25 @@
     }
   }
 
+
+  @include respond(desktop) {
+    padding: 36px 48px;
+    border-radius: 12px;
+    min-width: 512px;
+    min-height: 96px;
+    margin: 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    p {
+      font-size: 20px;
+      line-height: 120%;  
+      letter-spacing: 0.05em;
+    }
+  }
+
 }
-
-
-
-
 
 /* 麵包屑容器 */
 .ui-subHero__breadcrumb {

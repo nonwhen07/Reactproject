@@ -11870,6 +11870,10 @@ body {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 img,
 picture,
 video,
@@ -11936,81 +11940,136 @@ textarea {
   min-height: 240px;
 }
 
-/* 裝飾層 */
+/* 各自個分頁的Sub-HeroBanner */
 .ui-subHero {
   position: relative;
   background-color: #C9E9F4;
-  border-radius: 24px;
-  overflow: hidden; /* 逼免止浮水印超勒邊界 */
-  min-height: 296px;
-  padding-top: 72px;
+  padding: 64px 12px 0 12px;
+  gap: 64px;
+  min-height: 297px;
+}
+@media (min-width: 992px) {
+  .ui-subHero {
+    padding: 72px 272px 0 272px;
+    gap: 72px;
+    overflow: hidden; /* 逼免止浮水印超勒邊界 */
+    border-radius: 24px;
+  }
 }
 
-/* 浮水印文字 */
+/* 浮水印文字：mobile 預設「不存在」 */
 .ui-subHero::after {
-  /* 關鍵：讓內容直接讀取 HTML 上的 data-watermark */
-  content: attr(data-watermark);
-  position: absolute; /* 讓它對齊 1296px 內容區的右側 */
-  right: calc((75% - 1296px) / 2);
-  bottom: -20px; /* 稍微往下掉一點 */
-  font-size: 128px;
-  font-weight: 700;
-  color: rgba(91, 141, 222, 0.08);
-  line-height: 100%;
-  letter-spacing: 2%;
-  white-space: nowrap;
-  z-index: 1;
-  pointer-events: none;
-  user-select: none;
-  filter: blur(0.5px);
+  content: none;
+}
+@media (min-width: 992px) {
+  .ui-subHero::after {
+    content: attr(data-watermark); /* 關鍵：讓內容直接讀取 HTML 上的 data-watermark */
+    position: absolute;
+    right: calc((75% - 1296px) / 2);
+    bottom: -20px;
+    font-size: 128px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 2%;
+    color: rgba(91, 141, 222, 0.08);
+    white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    filter: blur(0.5px);
+  }
 }
 
+/* 包裹subHero content和aside餅處理desktop/mobile的顯示 */
+.ui-subHero__layout {
+  display: block;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .ui-subHero__layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* subHero content主題文字 */
 .ui-subHero__content {
   gap: 8px;
-  min-height: 96px;
+  min-height: 61px;
 }
 .ui-subHero__content h1 {
   color: #262626;
   font-family: "Chiron GoRound TC", sans-serif;
-  font-size: 48px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 120%;
-  letter-spacing: 2%;
+  letter-spacing: 0.05em;
 }
 .ui-subHero__content p {
   color: #262626;
   font-family: "Chiron GoRound TC", sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 120%;
-  letter-spacing: 5%;
+  line-height: 150%;
+  letter-spacing: 2%;
+}
+@media (min-width: 992px) {
+  .ui-subHero__content {
+    min-height: 96px;
+  }
+  .ui-subHero__content h1 {
+    font-size: 48px;
+    letter-spacing: 2%;
+  }
+  .ui-subHero__content p {
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0.025m;
+  }
 }
 
+/* subHero aside 方框+風味文字 */
 .ui-subHero__aside {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
+  padding: 8px 24px;
   gap: 10px;
   border-radius: 12px;
-  min-width: 512px;
-  min-height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 24px auto 0 auto;
 }
-.ui-subHero__aside p, .ui-subHero__aside a {
+.ui-subHero__aside p {
   color: #2F6382;
   font-family: "Chiron GoRound TC", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 120%;
-  letter-spacing: 0.05em;
+  line-height: 150%;
+  letter-spacing: 0.02em;
   transition: color 0.15s ease, transform 0.1s ease;
 }
-.ui-subHero__aside p:hover, .ui-subHero__aside a:hover {
+.ui-subHero__aside p:hover {
   color: #5B8DDE;
 }
-.ui-subHero__aside p:active, .ui-subHero__aside a:active {
+.ui-subHero__aside p:active {
   color: #2F6382;
   transform: translateY(1px);
+}
+@media (min-width: 992px) {
+  .ui-subHero__aside {
+    padding: 36px 48px;
+    border-radius: 12px;
+    min-width: 512px;
+    min-height: 96px;
+    margin: 0;
+  }
+  .ui-subHero__aside p {
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+  }
 }
 
 /* 麵包屑容器 */
