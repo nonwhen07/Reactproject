@@ -12251,22 +12251,23 @@ textarea {
   }
 }
 .header .navbar-toggler {
+  position: relative;
   max-width: 40px;
   max-height: 40px;
   margin-right: 16px;
   padding: 8px;
 }
 .header .navbar-toggler .hamburger {
-  display: inline-block;
+  display: inline-block !important;
 }
 .header .navbar-toggler .close-icon {
-  display: none;
+  display: none !important;
 }
 .header .navbar-toggler:not(.collapsed) .hamburger {
-  display: none;
+  display: none !important;
 }
 .header .navbar-toggler:not(.collapsed) .close-icon {
-  display: inline-block;
+  display: inline-block !important;
 }
 @media (min-width: 992px) {
   .header .navbar-toggler {
@@ -12553,9 +12554,15 @@ textarea {
   width: 2.5rem;
   height: 2.5rem;
   padding: 0.5rem;
-  border-radius: 0.5rem;
   background-color: #F0F0F0;
-  color: #FEC631;
+  border-radius: 0.5rem;
+  border: none;
+  font-family: "Chiron GoRound TC", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #262626;
   cursor: pointer;
   user-select: none;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -12563,7 +12570,6 @@ textarea {
 }
 .ui-pagination__item:hover, .ui-pagination__item.is-active {
   background-color: #FEC631;
-  color: #262626;
 }
 .ui-pagination__item.is-disabled {
   opacity: 0.4;

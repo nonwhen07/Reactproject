@@ -49,25 +49,26 @@
   }
 
   .navbar-toggler{ 
+    position: relative;
     max-width: 40px;
     max-height: 40px;
     margin-right: 16px;
     padding: 8px;
     
-    .hamburger {
-      display: inline-block;
+    .hamburger {  // hamburger 預設顯示
+      display: inline-block !important;
     }
-    .close-icon {
-      display: none;
+    .close-icon { // 強制初始隱藏 close-icon
+      display: none !important;
     }
 
       // 當 navbar 展開時（非 collapsed 狀態）
     &:not(.collapsed) {
       .hamburger {
-        display: none;
+        display: none !important;
       }
       .close-icon {
-        display: inline-block;
+        display: inline-block !important;
       }
     }
 
