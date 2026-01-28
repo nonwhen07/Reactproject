@@ -11894,7 +11894,7 @@ textarea {
 .ui-container {
   max-width: 1296px;
   margin: 0 auto;
-  padding: 0 12px;
+  padding: 0px;
 }
 
 .ui-section {
@@ -11906,6 +11906,7 @@ textarea {
 .ui-wrapper {
   max-width: 1920px;
   margin: 0 auto;
+  padding: 0px;
 }
 
 .ui-section--light {
@@ -11944,17 +11945,19 @@ textarea {
 .ui-subHero {
   position: relative;
   background-color: #C9E9F4;
-  padding: 64px 12px 0 12px;
-  gap: 64px;
+  padding: 64px 12px 64px 12px;
   min-height: 297px;
 }
 @media (min-width: 992px) {
   .ui-subHero {
     padding: 72px 272px 0 272px;
-    gap: 72px;
     overflow: hidden; /* 逼免止浮水印超勒邊界 */
     border-radius: 24px;
   }
+}
+
+.ui-subHero--warning {
+  background-color: rgba(254, 198, 49, 0.3);
 }
 
 /* 浮水印文字：mobile 預設「不存在」 */
@@ -12075,24 +12078,33 @@ textarea {
 /* 麵包屑容器 */
 .ui-subHero__breadcrumb {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (min-width: 992px) {
+  .ui-subHero__breadcrumb {
+    left: 0;
+    right: 0;
+    bottom: -1px;
+  }
 }
 .ui-subHero__breadcrumb .ui-breadcrumb {
-  min-width: 306px;
-  min-height: 56px;
+  /* 1️ Box / layout */
   display: inline-block;
+  min-width: 168px;
+  min-height: 44px;
   background: #FFFFFF;
-  padding: 24px 24px 8px 24px;
-  border-radius: 6px 6px 0 0;
+  padding: 12px 20px 8px 20px;
+  border-radius: 12px 12px 0 0;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.06);
+  /* 2️ Typography */
   font-family: "Noto Sans TC", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 150%;
-  letter-spacing: 0%;
-  text-decoration: none;
+  letter-spacing: 0;
+  /* 3️ Element states */
 }
 .ui-subHero__breadcrumb .ui-breadcrumb a {
   color: #262626;
@@ -12107,12 +12119,25 @@ textarea {
 .ui-subHero__breadcrumb .ui-breadcrumb__current:hover {
   color: #5B8DDE;
 }
+.ui-subHero__breadcrumb .ui-breadcrumb {
+  /* 4 Icon */
+}
 .ui-subHero__breadcrumb .ui-breadcrumb i, .ui-subHero__breadcrumb .ui-breadcrumb svg {
   width: 16px;
   height: 16px;
   stroke-width: 2;
   color: #A3A3A3;
   vertical-align: middle;
+}
+.ui-subHero__breadcrumb .ui-breadcrumb {
+  /* 5️ Responsive（desktop） */
+}
+@media (min-width: 992px) {
+  .ui-subHero__breadcrumb .ui-breadcrumb {
+    min-width: 306px;
+    min-height: 56px;
+    padding: 24px 24px 8px 24px;
+  }
 }
 
 .ui-nav-item .dropdown-item {
@@ -12131,11 +12156,45 @@ textarea {
 }
 
 .header .navbar {
-  min-height: 156px;
+  min-height: 72px;
+  border-radius: 0 0 16px 16px;
+  padding: 0;
+}
+@media (min-width: 992px) {
+  .header .navbar {
+    border-radius: 0px;
+    min-height: 156px;
+  }
 }
 .header .navbar-nav {
-  min-height: 32px;
+  border-radius: 0 0 16px 16px;
   gap: 8px;
+}
+@media (min-width: 992px) {
+  .header .navbar-nav {
+    min-height: 32px;
+  }
+}
+.header .navbar-brand {
+  margin-top: 18.5px;
+  margin-bottom: 18.5px;
+  margin-left: 12px;
+}
+@media (min-width: 992px) {
+  .header .navbar-brand {
+    margin-top: 64px;
+    margin-bottom: 40px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ui-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }
 
 .ui-nav-item .nav-link {
@@ -12144,26 +12203,41 @@ textarea {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  text-align: center;
+  text-align: left;
   color: #262626;
-  padding: 4px 16px;
-  border-radius: 40px;
-  min-width: 81px;
+  border-radius: 0px;
 }
-.ui-nav-item .nav-link:hover {
-  background-color: #C9E9F4;
+@media (min-width: 992px) {
+  .ui-nav-item .nav-link {
+    text-align: center;
+    padding: 4px 16px;
+    border-radius: 40px;
+    min-width: 81px;
+  }
+  .ui-nav-item .nav-link:hover {
+    background-color: #C9E9F4;
+  }
 }
 .ui-nav-item .dropdown-toggle::after {
   display: none;
 }
 .ui-nav-item .dropdown-menu {
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   border: none;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   padding: 8px;
-  min-width: 97px;
+  min-width: 224px;
+}
+@media (min-width: 992px) {
+  .ui-nav-item .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 8px;
+    min-width: 97px;
+  }
 }
 /* --- 基礎樣式：定義所有按鈕共用的外觀，並以「中等 (MD)」作為預設值 --- */
 .ui-btn {

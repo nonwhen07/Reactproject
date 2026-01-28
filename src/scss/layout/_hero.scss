@@ -30,18 +30,24 @@
 .ui-subHero {
   position: relative;
   background-color: $ui-color-secondary; 
-  padding: 64px 12px 0 12px;
-  gap: 64px;
+  padding: 64px 12px 64px 12px;
   min-height: 297px;
 
   @include respond(desktop) {
     // display: flex; 
     // justify-content: space-between;
+    // gap: 72px;
     padding: 72px 272px 0 272px;
-    gap: 72px;
     overflow: hidden; /* 逼免止浮水印超勒邊界 */
     border-radius: 24px;
   }
+}
+
+// subHero 變體背景色
+.ui-subHero--warning {
+  // background-color: $ui-color-warning;
+  // 直接用 rgba(變數, 透明度)
+  background-color: rgba($ui-yellow-400, 0.3);
 }
 
 /* 浮水印文字：mobile 預設「不存在」 */
@@ -180,26 +186,34 @@
 /* 麵包屑容器 */
 .ui-subHero__breadcrumb {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px; // 半貼出來
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include respond(desktop) {
+    left: 0;
+    right: 0;
+    bottom: -1px; // 半貼出來
+  }
 
   .ui-breadcrumb {
-    min-width: 306px;
-    min-height: 56px;
+    /* 1️ Box / layout */
     display: inline-block;
+    min-width: 168px;
+    min-height: 44px;
     background: $ui-neutral-50;
-    padding: 24px 24px 8px 24px;
-    border-radius: 6px 6px 0 0;
+    padding: 12px 20px 8px 20px;
+    border-radius: 12px 12px 0 0;
     box-shadow: 0 -1px 0 rgba(0,0,0,.06);
-
+  
+    /* 2️ Typography */
     font-family: "Noto Sans TC", sans-serif;
     font-size: 16px;
     font-weight: 700;
     line-height: 150%;
-    letter-spacing: 0%;
-    text-decoration: none;
-
+    letter-spacing: 0;
+    
+    /* 3️ Element states */
     a {
       color: $ui-nav-link;
       text-decoration: none;
@@ -216,7 +230,7 @@
         color: $ui-nav-link-hover;
       }
     }
-
+    /* 4 Icon */
     i, svg {
       width: 16px;
       height: 16px;
@@ -224,8 +238,12 @@
       color: $ui-text-muted;
       vertical-align: middle;
     }
-  }
 
-  
-  
+     /* 5️ Responsive（desktop） */
+    @include respond(desktop) {
+      min-width: 306px;
+      min-height: 56px;
+      padding: 24px 24px 8px 24px;
+    }
+  }
 }

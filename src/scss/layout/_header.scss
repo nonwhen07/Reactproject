@@ -1,19 +1,54 @@
 // _header.scss
+@use '../helpers/mixins' as *;
 @use '../helpers/variables' as *;
 @use '../components/dropdown-skin' as *;
 
 .header {
   // ===== Header Layout（只負責排版）=====
   .navbar {
-    min-height: 156px;
+    min-height: 72px;
+    border-radius: 0 0 16px 16px;
+    padding: 0;
+
+    @include respond(desktop) {
+      border-radius: 0px;
+      min-height: 156px;
+    }
   }
 
   .navbar-nav {
-    min-height: 32px;
+    border-radius: 0 0 16px 16px;
     gap: 8px;
+
+    @include respond(desktop) {
+      min-height: 32px;
+    }
+  }
+
+  .navbar-brand{
+    margin-top: 18.5px;
+    margin-bottom: 18.5px;
+    margin-left:  12px;
+    @include respond(desktop) {
+      margin-top: 64px;
+      margin-bottom: 40px;
+      margin-left:  0px;
+    }
   }
 }
 
+
+.ui-nav {
+  
+  @include respond(desktop) {
+    //ms-auto align-items-lg-center gap-lg-2
+    margin-left: auto;  // 等同 ms-auto
+    display: flex;
+    // flex-direction: row;        // 預設 row，可省略
+    align-items: center;
+    gap: 8px;
+  }
+}
 // ===== UI Component: Nav Item =====
 .ui-nav-item {
 
@@ -24,15 +59,21 @@
     font-weight: 700;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    text-align: center;
+    text-align: left;
     color: $ui-neutral-800;
-    padding: 4px 16px;
-    border-radius: 40px;
-    min-width: 81px;
 
-    &:hover {
-      background-color: $ui-color-secondary;
-      // color: $ui-color-primary;
+    border-radius: 0px;
+
+    @include respond(desktop) {
+      text-align: center;
+      padding: 4px 16px;
+      border-radius: 40px;
+      min-width: 81px;
+
+      &:hover {
+        background-color: $ui-color-secondary;
+        // color: $ui-color-primary;
+      }
     }
   }
 
@@ -43,13 +84,22 @@
 
   // Dropdown Menu 外框
   .dropdown-menu {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    // transform: translateX(-50%);
     border: none;
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0,0,0,.08);
     padding: 8px;
-    min-width: 97px;
+    min-width: 224px;
+
+    @include respond(desktop) {
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      padding: 8px;
+      min-width: 97px;
+    }
   }
 
   // Dropdown Item 文字樣式
