@@ -183,6 +183,63 @@
 
 }
 
+/* subHero scam 詐騙資訊宣導頁面的方框+風味文字(未動工) */
+.ui-subHero__scam {
+  background-color: $ui-bg-default;
+  padding: 8px 24px;
+  gap: 10px;
+  border-radius: 12px;
+  // min-width: 303px;
+  // min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px auto 0 auto;
+
+  p {
+    color: $ui-nav-link-active;
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;  
+    letter-spacing: 0.02em;
+    transition: color 0.15s ease, transform 0.1s ease;   // 加上這行，變化才會順滑
+
+    &:hover {
+      color: $ui-nav-link-hover;            // 例如藍色 $sui-blue-500
+      // text-decoration: underline;         // 可選：很多設計會在 hover 加底線
+      // 或 cursor: pointer;                 // 如果想要更像連結感
+    }
+
+    &:active {
+      color: $ui-nav-link-active;           // 通常更深，例如 $sui-blue-700
+      transform: translateY(1px);           // 輕微下沉，模擬按下去
+    }
+  }
+
+
+  @include respond(desktop) {
+    padding: 36px 48px;
+    border-radius: 12px;
+    min-width: 512px;
+    min-height: 96px;
+    margin: 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    p {
+      font-size: 20px;
+      line-height: 120%;  
+      letter-spacing: 0.05em;
+    }
+  }
+
+}
+
+
+
+
 /* 麵包屑容器 */
 .ui-subHero__breadcrumb {
   position: absolute;

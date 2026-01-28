@@ -11870,6 +11870,11 @@ body {
   margin: 0;
 }
 
+body.is-nav-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
 p {
   margin: 0;
 }
@@ -12075,6 +12080,48 @@ textarea {
   }
 }
 
+/* subHero scam 詐騙資訊宣導頁面的方框+風味文字(未動工) */
+.ui-subHero__scam {
+  background-color: #FFFFFF;
+  padding: 8px 24px;
+  gap: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px auto 0 auto;
+}
+.ui-subHero__scam p {
+  color: #2F6382;
+  font-family: "Chiron GoRound TC", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  transition: color 0.15s ease, transform 0.1s ease;
+}
+.ui-subHero__scam p:hover {
+  color: #5B8DDE;
+}
+.ui-subHero__scam p:active {
+  color: #2F6382;
+  transform: translateY(1px);
+}
+@media (min-width: 992px) {
+  .ui-subHero__scam {
+    padding: 36px 48px;
+    border-radius: 12px;
+    min-width: 512px;
+    min-height: 96px;
+    margin: 0;
+  }
+  .ui-subHero__scam p {
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+  }
+}
+
 /* 麵包屑容器 */
 .ui-subHero__breadcrumb {
   position: absolute;
@@ -12146,7 +12193,7 @@ textarea {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  text-align: center;
+  text-align: left;
   border-radius: 40px;
   padding: 4px 16px;
   color: #262626;
@@ -12154,10 +12201,17 @@ textarea {
 .ui-nav-item .dropdown-item:hover, .ui-nav-item .active.dropdown-item {
   background-color: #C9E9F4;
 }
+@media (min-width: 992px) {
+  .ui-nav-item .dropdown-item {
+    text-align: center;
+  }
+}
 
+.header {
+  position: relative;
+}
 .header .navbar {
   min-height: 72px;
-  border-radius: 0 0 16px 16px;
   padding: 0;
 }
 @media (min-width: 992px) {
@@ -12179,6 +12233,11 @@ textarea {
   margin-top: 18.5px;
   margin-bottom: 18.5px;
   margin-left: 12px;
+  padding: 0px;
+}
+.header .navbar-brand img {
+  max-width: 100px;
+  max-height: 35px;
 }
 @media (min-width: 992px) {
   .header .navbar-brand {
@@ -12186,8 +12245,82 @@ textarea {
     margin-bottom: 40px;
     margin-left: 0px;
   }
+  .header .navbar-brand img {
+    max-width: 180px;
+    max-height: 52px;
+  }
+}
+.header .navbar-toggler {
+  max-width: 40px;
+  max-height: 40px;
+  margin-right: 16px;
+  padding: 8px;
+}
+.header .navbar-toggler .hamburger {
+  display: inline-block;
+}
+.header .navbar-toggler .close-icon {
+  display: none;
+}
+.header .navbar-toggler:not(.collapsed) .hamburger {
+  display: none;
+}
+.header .navbar-toggler:not(.collapsed) .close-icon {
+  display: inline-block;
+}
+@media (min-width: 992px) {
+  .header .navbar-toggler {
+    display: none;
+    margin-right: 0px;
+  }
+}
+.header .navbar-collapse {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+  background-color: #FFFFFF;
+  border-radius: 0px 0px 16px 16px;
+}
+@media (min-width: 992px) {
+  .header .navbar-collapse {
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    z-index: auto;
+    border-radius: 0px;
+  }
+}
+.header .nav-backdrop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1040;
+  display: none;
+  pointer-events: auto;
+}
+.header .navbar-collapse.show ~ .nav-backdrop {
+  display: block;
+}
+@media (min-width: 992px) {
+  .header .nav-backdrop {
+    display: none !important;
+  }
 }
 
+.header:has(.navbar-collapse.show) .nav-backdrop {
+  display: block;
+}
+
+.ui-nav {
+  display: flex;
+  gap: 8px;
+}
 @media (min-width: 992px) {
   .ui-nav {
     margin-left: auto;
@@ -12197,7 +12330,22 @@ textarea {
   }
 }
 
+.ui-nav-item {
+  margin-left: 16px;
+  padding: 0px 16px;
+  gap: 8px;
+}
+@media (min-width: 992px) {
+  .ui-nav-item {
+    margin-left: 0px;
+  }
+}
 .ui-nav-item .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  border-radius: 0px;
   font-family: "Chiron GoRound TC", sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -12205,12 +12353,10 @@ textarea {
   letter-spacing: 0.02em;
   text-align: left;
   color: #262626;
-  border-radius: 0px;
 }
 @media (min-width: 992px) {
   .ui-nav-item .nav-link {
-    text-align: center;
-    padding: 4px 16px;
+    justify-content: center;
     border-radius: 40px;
     min-width: 81px;
   }

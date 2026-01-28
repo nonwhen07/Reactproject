@@ -10,23 +10,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
   <!-- Header -->
   <header class="header ui-wrapper">
     
     <nav class="navbar navbar-expand-lg bg-white">
-      <div class="container ui-container">
-        <a class="navbar-brand d-flex align-items-center" href="./index.html">
-          <img src="../src/assets/logo.png" alt="稀寵搜尋.logo" height="32" class="me-2">
+      <div class="container ui-container d-flex align-items-center">
+        <a class="navbar-brand" href="./index.html">
+          <img src="../src/assets/logo.png" alt="稀寵搜尋.logo" class="me-2">
         </a>
+
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#mainNav"
         >
-          <span class="navbar-toggler-icon"></span>
+          <i data-feather="align-justify" class="hamburger me-1"></i> 
+          <i data-feather="x" class="close-icon me-1"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="mainNav">
@@ -47,14 +50,12 @@
               </ul>
             </li>
             <li class="nav-item ui-nav-item">
-              <a class="nav-link d-flex align-items-center" href="./index.html">
-                <i class="bi bi-person-circle me-1"></i>
+              <a class="nav-link" href="./index.html">
                 稀寵資訊
               </a>
             </li>
             <li class="nav-item ui-nav-item">
-              <a class="nav-link d-flex align-items-center" href="./index.html">
-                <i class="bi bi-person-circle me-1"></i>
+              <a class="nav-link" href="./index.html">
                 投稿/回報
               </a>
             </li>
@@ -73,8 +74,8 @@
               </ul>
             </li>
             <li class="nav-item ui-nav-item">
-              <a class="nav-link d-flex align-items-center" href="./index.html">
-                <i class="bi bi-person-circle me-1"></i>
+              <a class="nav-link" href="./index.html">
+                <i data-feather="user" class="me-1"></i> 
                 會員中心
               </a>
             </li>
@@ -83,6 +84,8 @@
 
       </div>
     </nav>
+
+    <div class="nav-backdrop"></div>
   </header>
 
   <!-- Content -->
@@ -114,6 +117,61 @@
       </div>
     </section>
 
+    <section class="ui-section ui-section--light my-5">
+      <div class="ui-canvas ui-subHero" data-watermark="Results Info">
+        <div class="ui-container ui-subHero__layout">
+          <div class="ui-subHero__content">
+            <h1>柯爾鴨精品休閒館-台中店</h1>
+            <p>Frame 87697</p>
+          </div>
+          <div class="ui-subHero__aside shadow-sm">
+            <p> 可接待的寵物：</p>
+            <p> 🐁 倉鼠、🦆 柯爾鴨、🐢 烏龜、🦔 刺蝟</p>
+          </div>
+        </div>
+        <div class="ui-subHero__breadcrumb">
+          <div class="ui-container">
+            <nav class="ui-breadcrumb">
+              <div class="d-flex align-items-center gap-1">
+                <a href="#">首頁</a> 
+                <i data-feather="chevron-right"></i> 
+                <span class="ui-breadcrumb">搜尋頁面結果</span>
+                <i data-feather="chevron-right"></i>
+                <span class="ui-breadcrumb__current">店家資訊</span>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 未動工區域 -->
+    <section class="ui-section ui-section--yellow my-5">
+      <div class="ui-canvas ui-subHero" data-watermark="Information">
+        <div class="ui-container ui-subHero__layout">
+          <div class="ui-subHero__content">
+            <h1>你負責愛，我們負責搜</h1>
+            <p>找寵物商店，就從這裡</p>
+          </div>
+          <div class="ui-subHero__aside shadow-sm">
+            <p> 吃的、洗的、住的、醫療一次找齊</p>
+          </div>
+        </div>
+        <div class="ui-subHero__breadcrumb">
+          <div class="ui-container">
+            <nav class="ui-breadcrumb">
+              <div class="d-flex align-items-center gap-1">
+                <a href="#">首頁</a> 
+                <i data-feather="chevron-right"></i> 
+                <span class="ui-breadcrumb__current">搜尋結果</span>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 部分錯誤未動工區域 -->
     <section class="ui-section ui-section--light my-5">
       <div class="ui-container">
         <div class="ui-hero__bg">
@@ -219,9 +277,21 @@
   </footer>
   <!-- Bootstrap JS（npm 版） -->
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
   <script>
     feather.replace();
+
+    const nav = document.getElementById('mainNav');
+
+    nav.addEventListener('show.bs.collapse', () => {
+      document.body.classList.add('is-nav-open');
+    });
+
+    nav.addEventListener('hidden.bs.collapse', () => {
+      document.body.classList.remove('is-nav-open');
+    });
+    
   </script>
 </body>
 </html>
