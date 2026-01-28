@@ -12320,6 +12320,7 @@ textarea {
 
 .ui-nav {
   display: flex;
+  margin-bottom: 24px;
   gap: 8px;
 }
 @media (min-width: 992px) {
