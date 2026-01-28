@@ -12129,13 +12129,6 @@ textarea {
   left: 50%;
   transform: translateX(-50%);
 }
-@media (min-width: 992px) {
-  .ui-subHero__breadcrumb {
-    left: 0;
-    right: 0;
-    bottom: -1px;
-  }
-}
 .ui-subHero__breadcrumb .ui-breadcrumb {
   /* 1️ Box / layout */
   display: inline-block;
@@ -12160,11 +12153,15 @@ textarea {
 .ui-subHero__breadcrumb .ui-breadcrumb a:hover {
   color: #5B8DDE;
 }
-.ui-subHero__breadcrumb .ui-breadcrumb__current {
-  color: #2F6382;
+.ui-subHero__breadcrumb .ui-breadcrumb__item {
+  color: #262626;
 }
-.ui-subHero__breadcrumb .ui-breadcrumb__current:hover {
+.ui-subHero__breadcrumb .ui-breadcrumb__item:hover {
   color: #5B8DDE;
+}
+.ui-subHero__breadcrumb .ui-breadcrumb__item.is-current {
+  color: #2F6382;
+  pointer-events: none;
 }
 .ui-subHero__breadcrumb .ui-breadcrumb {
   /* 4 Icon */
@@ -12184,6 +12181,15 @@ textarea {
     min-width: 306px;
     min-height: 56px;
     padding: 24px 24px 8px 24px;
+  }
+}
+@media (min-width: 992px) {
+  .ui-subHero__breadcrumb {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    transform: none;
   }
 }
 

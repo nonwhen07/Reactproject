@@ -238,20 +238,12 @@
 }
 
 
-
-
 /* 麵包屑容器 */
 .ui-subHero__breadcrumb {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-
-  @include respond(desktop) {
-    left: 0;
-    right: 0;
-    bottom: -1px; // 半貼出來
-  }
 
   .ui-breadcrumb {
     /* 1️ Box / layout */
@@ -280,12 +272,17 @@
       }
     }
 
-    &__current {
-      color: $ui-nav-link-active;
+    &__item  {
+      color: $ui-nav-link;
 
       &:hover {
         color: $ui-nav-link-hover;
       }
+    }
+
+    &__item.is-current {
+      color: $ui-nav-link-active;
+      pointer-events: none;
     }
     /* 4 Icon */
     i, svg {
@@ -302,5 +299,13 @@
       min-height: 56px;
       padding: 24px 24px 8px 24px;
     }
+  }
+
+  @include respond(desktop) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px; // 半貼出來
+    transform: none;
   }
 }
