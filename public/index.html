@@ -93,7 +93,7 @@
 
     
     <section class="ui-section ui-section--light">
-      <div class="ui-canvas ui-subHero" data-watermark="Search Results">
+      <div class="ui-subHero" data-watermark="Search Results">
         <div class="ui-container ui-subHero__layout">
           <div class="ui-subHero__content">
             <h1>你負責愛，我們負責搜</h1>
@@ -103,72 +103,74 @@
             <p> 吃的、洗的、住的、醫療一次找齊</p>
           </div>
         </div>
-        <div class="ui-subHero__breadcrumb">
-          <div class="ui-container">
-            <nav class="ui-breadcrumb">
-              <div class="d-flex align-items-center gap-1">
-                <a href="#">首頁</a> 
-                <i data-feather="chevron-right"></i> 
-                <span class="ui-breadcrumb__item is-current">搜尋結果</span>
-              </div>
-            </nav>
-          </div>
+        <div class="ui-subHero__breadcrumb ui-container">
+          <nav class="ui-breadcrumb">
+            <a href="#">首頁</a> 
+            <i data-feather="chevron-right"></i> 
+            <span class="ui-breadcrumb__item is-current">搜尋結果</span>
+          </nav>
         </div>
       </div>
     </section>
 
     <section class="ui-section ui-section--light my-5">
-      <div class="ui-canvas ui-subHero" data-watermark="Results Info">
+      <div class="ui-subHero" data-watermark="Results Info">
         <div class="ui-container ui-subHero__layout">
           <div class="ui-subHero__content">
             <h1>柯爾鴨精品休閒館-台中店</h1>
-            <p>Frame 87697</p>
+
+            <div class="ui-subHero__meta">
+              <div class="ui-subHero__meta-group">
+                <span class="ui-subHero__meta-item"><i data-feather="heart"></i> 153</span>
+                <span class="ui-subHero__meta-divider">|</span>
+                <span class="ui-subHero__meta-item">10 則評論</span>
+              </div>
+              <div class="ui-subHero__meta-group">
+                <span class="ui-subHero__meta-item"><i data-feather="home"></i> 旅館</span>
+                <span class="ui-subHero__meta-item"><i data-feather="shopping-bag"></i> 賣家</span>
+                <span class="ui-subHero__meta-item"><i data-feather="plus-square"></i> 診所</span>
+              </div>
+            </div>
+
           </div>
           <div class="ui-subHero__aside shadow-sm row">
-            <p> 可接待的寵物：🐁 倉鼠、🦆 柯爾鴨、🐢 烏龜、🦔 刺蝟</p>
+            <p> 可接待的寵物：</p>
+            <p> 🐁 倉鼠、🦆 柯爾鴨、🐢 烏龜、🦔 刺蝟</p>
           </div>
         </div>
-        <div class="ui-subHero__breadcrumb">
-          <div class="ui-container">
-            <nav class="ui-breadcrumb">
-              <div class="d-flex align-items-center gap-1">
-                <a href="#">首頁</a> 
-                <i data-feather="chevron-right"></i> 
-                <span class="ui-breadcrumb__item">搜尋頁面結果</span>
-                <i data-feather="chevron-right"></i>
-                <span class="ui-breadcrumb__item is-current">店家資訊</span>
-              </div>
-            </nav>
-          </div>
+        <div class="ui-subHero__breadcrumb ui-container">
+          <nav class="ui-breadcrumb">
+            <a href="#">首頁</a> 
+            <i data-feather="chevron-right"></i> 
+            <span class="ui-breadcrumb__item">搜尋頁面結果</span>
+            <i data-feather="chevron-right"></i> 
+            <span class="ui-breadcrumb__item is-current">店家資訊</span>
+          </nav>
         </div>
       </div>
     </section>
 
     <!-- 未動工區域 -->
-    <section class="ui-section ui-section--yellow my-5">
-      <div class="ui-canvas ui-subHero" data-watermark="Information">
-        <div class="ui-container ui-subHero__layout">
-          <div class="ui-subHero__content">
-            <h1>你負責愛，我們負責搜</h1>
-            <p>找寵物商店，就從這裡</p>
-          </div>
-          <div class="ui-subHero__aside shadow-sm">
-            <p> 吃的、洗的、住的、醫療一次找齊</p>
+    <section class="ui-section ui-section--light my-5">
+      <div class="ui-subHero ui-subHero--warning" data-watermark="Information">
+
+        <div class="ui-container">
+          <div class="ui-subHero__information">
+            <h2>小心假冒「動保處」的釣魚簡訊！</h2>
+            <p>近日有賣家收到謊稱「寵物登記異常」的簡訊，要求點擊連結補件。這是詐騙！請直接刪除，勿輸入個資。</p>
           </div>
         </div>
-        <div class="ui-subHero__breadcrumb">
-          <div class="ui-container">
-            <nav class="ui-breadcrumb">
-              <div class="d-flex align-items-center gap-1">
-                <a href="#">首頁</a> 
-                <i data-feather="chevron-right"></i> 
-                <span class="ui-breadcrumb__item is-current">搜尋結果</span>
-              </div>
-            </nav>
-          </div>
+
+        <div class="ui-subHero__breadcrumb ui-container">
+          <nav class="ui-breadcrumb">
+            <a href="#">首頁</a> 
+            <i data-feather="chevron-right"></i>
+            <span class="ui-breadcrumb__item is-current">稀寵資訊</span>
+          </nav>
         </div>
       </div>
     </section>
+    
 
     <!-- UI展示區區域 -->
     <section class="ui-section ui-section--light my-5">
@@ -219,14 +221,14 @@
                     aria-label="Previous page"
                     disabled
                   >
-                    ‹
+                    <i data-feather="chevron-left"></i> 
                   </button>
 
                   <button
                     class="ui-pagination__item ui-pagination__item--prev"
                     aria-label="Previous page"
                   >
-                    ‹
+                    <i data-feather="chevron-left"></i> 
                   </button>
                   <button class="ui-pagination__item">1</button>
                   <button class="ui-pagination__item is-active" aria-current="page">
@@ -237,7 +239,14 @@
                     class="ui-pagination__item ui-pagination__item--next"
                     aria-label="Next page"
                   >
-                    ›
+                    <i data-feather="chevron-right"></i> 
+                  </button>
+                  <button
+                    class="ui-pagination__item ui-pagination__item--prev is-disabled"
+                    aria-label="Previous page"
+                    disabled
+                  >
+                    <i data-feather="chevron-right"></i> 
                   </button>
                 </nav>
               </div>

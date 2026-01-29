@@ -11950,7 +11950,7 @@ textarea {
 .ui-subHero {
   position: relative;
   background-color: #C9E9F4;
-  padding: 64px 12px 64px 12px;
+  padding: 64px 12px 108px 12px;
   min-height: 297px;
 }
 @media (min-width: 992px) {
@@ -11959,10 +11959,6 @@ textarea {
     overflow: hidden; /* 逼免止浮水印超勒邊界 */
     border-radius: 24px;
   }
-}
-
-.ui-subHero--warning {
-  background-color: rgba(254, 198, 49, 0.3);
 }
 
 /* 浮水印文字：mobile 預設「不存在」 */
@@ -11985,6 +11981,65 @@ textarea {
     pointer-events: none;
     user-select: none;
     filter: blur(0.5px);
+  }
+}
+
+.ui-subHero--warning {
+  /* 1. 改變背景色 */
+  background-color: rgba(254, 198, 49, 0.3) !important;
+  padding: 100px 12px 80px 12px;
+  min-height: 326px;
+  /* 2. 改變浮水印文字色 (::after) */
+}
+@media (min-width: 992px) {
+  .ui-subHero--warning::after {
+    color: rgba(254, 198, 49, 0.2);
+  }
+}
+.ui-subHero--warning {
+  /* 4. 甚至可以改變麵包屑的背景 (如果有需要的話，不需要改的可以不要寫) */
+}
+.ui-subHero--warning .ui-subHero__information {
+  position: relative;
+}
+.ui-subHero--warning .ui-subHero__information::before {
+  content: "";
+  position: absolute;
+  background-image: url("/src/assets/img/duck-warning.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+  /* Mobile 樣式：鴨子放在框框上方 */
+  width: 200px;
+  height: 164px;
+  top: -60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (min-width: 992px) {
+  .ui-subHero--warning .ui-subHero__information::before {
+    /* Desktop 樣式：鴨子變大且移到左側 */
+    width: 400px;
+    height: 328px;
+    top: 50%;
+    left: -35%;
+    transform: translateY(-50%);
+  }
+}
+.ui-subHero--warning .ui-subHero__information::after {
+  content: none;
+}
+@media (min-width: 992px) {
+  .ui-subHero--warning .ui-subHero__information::after {
+    content: "";
+    position: absolute;
+    background-image: url("/src/assets/img/Vector.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 88px;
+    height: 100px;
+    top: -20%;
+    right: -7%;
   }
 }
 
@@ -12023,6 +12078,49 @@ textarea {
   line-height: 150%;
   letter-spacing: 2%;
 }
+.ui-subHero__content .ui-subHero__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: #525252;
+  font-size: 14px;
+  font-weight: 500;
+}
+.ui-subHero__content .ui-subHero__meta-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ui-subHero__content .ui-subHero__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.ui-subHero__content .ui-subHero__meta-item i, .ui-subHero__content .ui-subHero__meta-item svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5;
+}
+.ui-subHero__content .ui-subHero__meta-divider {
+  color: #777777;
+  user-select: none;
+}
+@media (min-width: 992px) {
+  .ui-subHero__content .ui-subHero__meta {
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 16px;
+    font-size: 16px;
+  }
+  .ui-subHero__content .ui-subHero__meta-group {
+    justify-content: flex-start;
+  }
+}
 @media (min-width: 992px) {
   .ui-subHero__content {
     min-height: 96px;
@@ -12041,12 +12139,14 @@ textarea {
 /* subHero aside 方框+風味文字 */
 .ui-subHero__aside {
   background-color: #FFFFFF;
-  padding: 8px 24px;
+  padding: 16px 8px;
   gap: 10px;
   border-radius: 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   margin: 24px auto 0 auto;
 }
 .ui-subHero__aside p {
@@ -12067,7 +12167,7 @@ textarea {
 }
 @media (min-width: 992px) {
   .ui-subHero__aside {
-    padding: 36px 48px;
+    padding: 20px 48px;
     border-radius: 12px;
     min-width: 512px;
     min-height: 96px;
@@ -12080,45 +12180,53 @@ textarea {
   }
 }
 
-/* subHero scam 詐騙資訊宣導頁面的方框+風味文字(未動工) */
-.ui-subHero__scam {
+/* subHero scam 詐騙資訊宣導頁面的方框+風味文字 */
+.ui-subHero__information {
   background-color: #FFFFFF;
-  padding: 8px 24px;
+  padding: 8px 36px;
   gap: 10px;
   border-radius: 12px;
+  width: 351px;
+  min-height: 212px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
   margin: 24px auto 0 auto;
 }
-.ui-subHero__scam p {
-  color: #2F6382;
+.ui-subHero__information h2 {
+  color: #262626;
+  font-family: "Chiron GoRound TC", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+.ui-subHero__information p {
+  color: #262626;
   font-family: "Chiron GoRound TC", sans-serif;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 150%;
-  letter-spacing: 0.02em;
-  transition: color 0.15s ease, transform 0.1s ease;
-}
-.ui-subHero__scam p:hover {
-  color: #5B8DDE;
-}
-.ui-subHero__scam p:active {
-  color: #2F6382;
-  transform: translateY(1px);
+  letter-spacing: 2%;
 }
 @media (min-width: 992px) {
-  .ui-subHero__scam {
-    padding: 36px 48px;
+  .ui-subHero__information {
+    margin-top: 0;
+    padding: 36px 80px;
     border-radius: 12px;
-    min-width: 512px;
-    min-height: 96px;
-    margin: 0;
+    width: 747px;
+    min-height: 166px;
   }
-  .ui-subHero__scam p {
-    font-size: 20px;
+  .ui-subHero__information h2 {
+    font-size: 32px;
+    letter-spacing: 2%;
+  }
+  .ui-subHero__information p {
+    font-size: 16px;
     line-height: 120%;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.025m;
   }
 }
 
@@ -12131,9 +12239,14 @@ textarea {
 }
 .ui-subHero__breadcrumb .ui-breadcrumb {
   /* 1️ Box / layout */
-  display: inline-block;
-  min-width: 168px;
-  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  height: auto;
+  min-height: unset;
+  max-height: none;
+  width: auto;
   background: #FFFFFF;
   padding: 12px 20px 8px 20px;
   border-radius: 12px 12px 0 0;
@@ -12167,6 +12280,7 @@ textarea {
   /* 4 Icon */
 }
 .ui-subHero__breadcrumb .ui-breadcrumb i, .ui-subHero__breadcrumb .ui-breadcrumb svg {
+  flex-shrink: 0;
   width: 16px;
   height: 16px;
   stroke-width: 2;
@@ -12178,8 +12292,9 @@ textarea {
 }
 @media (min-width: 992px) {
   .ui-subHero__breadcrumb .ui-breadcrumb {
-    min-width: 306px;
-    min-height: 56px;
+    align-items: left;
+    width: 306px;
+    max-height: 56px;
     padding: 24px 24px 8px 24px;
   }
 }
@@ -12404,9 +12519,9 @@ textarea {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  white-space: nowrap;
   /* 預設尺寸 (MD) - 直接依照設計稿標註 */
-  min-height: 53px;
-  padding: 0 3rem; /* 左右 48px */
+  padding: 0.875rem 2rem; /* 左右 48px */
   border-radius: 0.5rem; /* 8px */
   /* 結構與互動 */
   border: 1px solid transparent;
@@ -12417,16 +12532,14 @@ textarea {
 
 .ui-btn-sm {
   font-size: 0.875rem; /* 14px */
-  min-height: 38px; /* 縮小高度 */
-  padding: 0 1.5rem; /* 縮小左右間距 */
+  padding: 0.75rem 1.5rem; /* 縮小左右間距 */
   border-radius: 0.25rem; /* 較小的圓角 4px */
 }
 
 /* 大按鈕 (Large)：字體大、間距寬、圓角大 */
 .ui-btn-lg {
   font-size: 1.25rem; /* 20px */
-  min-height: 68px; /* 增加高度 */
-  padding: 0 4rem; /* 增加左右間距 */
+  padding: 1.25rem 3rem; /* 增加左右間距 */
   border-radius: 0.75rem; /* 較大的圓角 12px */
 }
 

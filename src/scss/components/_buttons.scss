@@ -33,10 +33,12 @@
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.02em;
+
+  white-space: nowrap;  // 防止按鈕內文字換行導致按鈕高度異常
   
   /* 預設尺寸 (MD) - 直接依照設計稿標註 */
-  min-height: 53px; 
-  padding: 0 3rem;        /* 左右 48px */
+  // min-height: 53px; 
+  padding: 0.875rem 2rem;        /* 左右 48px */
   border-radius: 0.5rem;  /* 8px */
 
   /* 結構與互動 */
@@ -49,16 +51,16 @@
 //因為設計稿沒有提供 sm/lg 大小的按鈕，所以暫時不做這個尺寸(僅提供自製尺寸參考)
 .ui-btn-sm {
   font-size: 0.875rem;    /* 14px */
-  min-height: 38px;       /* 縮小高度 */
-  padding: 0 1.5rem;      /* 縮小左右間距 */
+  // min-height: 38px;       /* 縮小高度 */
+  padding: 0.75rem 1.5rem;      /* 縮小左右間距 */
   border-radius: 0.25rem; /* 較小的圓角 4px */
 }
 
 /* 大按鈕 (Large)：字體大、間距寬、圓角大 */
 .ui-btn-lg {
   font-size: 1.25rem;     /* 20px */
-  min-height: 68px;       /* 增加高度 */
-  padding: 0 4rem;        /* 增加左右間距 */
+  // min-height: 68px;       /* 增加高度 */
+  padding: 1.25rem 3rem;        /* 增加左右間距 */
   border-radius: 0.75rem; /* 較大的圓角 12px */
 }
 
