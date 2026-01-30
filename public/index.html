@@ -14,7 +14,7 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="header ui-wrapper">
+  <header class="header ui-layout">
     
     <nav class="navbar navbar-expand-lg bg-white">
       <div class="container ui-container d-flex align-items-center">
@@ -89,7 +89,7 @@
   </header>
 
   <!-- Content -->
-  <main class="container ui-wrapper">
+  <main class="container ui-layout">
 
     
     <section class="ui-section ui-section--light">
@@ -150,7 +150,7 @@
       </div>
     </section>
 
-    <!-- 未動工區域 -->
+    <!-- subHero__information區域 -->
     <section class="ui-section ui-section--light my-5">
       <div class="ui-subHero ui-subHero--warning" data-watermark="Information">
 
@@ -180,12 +180,12 @@
             <h1 class="text-primary">Hello Bootstrap + Sass 自訂義UI展示區(假想ui-section--info展示)</h1>
             <hr>
             <div class="row">
-              <div class="col-6">
+              <div class="col-12 col-md-6 mb-2">
                 <button class="ui-btn ui-btn-primary ui-btn-sm">小按鈕</button>
                 <button class="ui-btn ui-btn-primary">預設按鈕</button>
                 <button class="ui-btn ui-btn-primary ui-btn-lg">大按鈕</button>
               </div>
-              <div class="col-6">
+              <div class="col-12 col-md-6 mb-2">
                 <button class="btn btn-primary">Bootstrap Button</button>
                 <button class="ui-btn ui-btn-primary">投搞稀寵情報</button>
                 <button class="ui-btn ui-btn-primary">更多文章</button>
@@ -195,7 +195,7 @@
             </div>
             <hr>
             <div class="row">
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-md-6 mb-2">
                 <div class="row">
                   <div class="col-4 ui-carousel__controls">
                     <button class="ui-carousel__btn" aria-label="Previous">
@@ -214,7 +214,7 @@
                   </div>
                 </div>
               </div> 
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-md-6 mb-2">
                 <nav class="ui-pagination" aria-label="Pagination">
                   <button
                     class="ui-pagination__item ui-pagination__item--prev is-disabled"
@@ -253,7 +253,7 @@
             </div>
             <hr>
             <div class="row">
-              <div class="col-6">
+              <div class="col-12 col-md-6 mb-2">
                 <div class="ui-form-check">
                   <label class="ui-form-check">
                     <input type="checkbox" class="ui-form-check__input" />
@@ -262,11 +262,11 @@
                   </label>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-12 col-md-6 mb-2">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
                   <label class="form-check-label" for="flexCheckIndeterminate">
-                    Bootstrap-診所
+                    診所(Bootstrap)
                   </label>
                 </div>
               </div>
@@ -278,7 +278,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-top">
+  <footer class="footer ui-layout border-top">
     <div class="container py-4">
       <div style="height:120px;background:#F0F0F0;border-radius:8px;"></div>
     </div>

@@ -104,7 +104,7 @@
         height: 328px;
         top: 50%;
         // left: -260px; // 往左側移動，產生重疊感
-        left: -35%;
+        left: -38%;
         transform: translateY(-50%); // 垂直置中
       }
     }
@@ -126,6 +126,11 @@
         top: -20%; // 浮出框框右上角
         right: -7%;
       }
+    }
+
+    @include respond(desktop) {
+      // 向右移動一點讓浮水印蓋到
+      margin-left: 25%;
     }
   }
 

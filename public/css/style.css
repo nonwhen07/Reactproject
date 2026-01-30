@@ -11896,8 +11896,8 @@ textarea {
 }
 
 /* === 專案 base 區（你的世界觀） === */
-.ui-container {
-  max-width: 1296px;
+.ui-layout {
+  max-width: 1920px;
   margin: 0 auto;
   padding: 0px;
 }
@@ -11908,8 +11908,8 @@ textarea {
   border-radius: 40px;
 }
 
-.ui-wrapper {
-  max-width: 1920px;
+.ui-container {
+  max-width: 1296px;
   margin: 0 auto;
   padding: 0px;
 }
@@ -12022,7 +12022,7 @@ textarea {
     width: 400px;
     height: 328px;
     top: 50%;
-    left: -35%;
+    left: -38%;
     transform: translateY(-50%);
   }
 }
@@ -12040,6 +12040,11 @@ textarea {
     height: 100px;
     top: -20%;
     right: -7%;
+  }
+}
+@media (min-width: 992px) {
+  .ui-subHero--warning .ui-subHero__information {
+    margin-left: 25%;
   }
 }
 
